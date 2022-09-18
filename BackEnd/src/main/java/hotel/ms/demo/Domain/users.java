@@ -7,8 +7,6 @@ public class users {
     private String post;
 
     
-}
-
     public int getId() {
         return this.id;
     }
@@ -40,3 +38,5 @@ public class users {
     public void setPost(String post) {
         this.post = post;
     }
+
+}
