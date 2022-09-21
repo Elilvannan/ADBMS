@@ -1,13 +1,13 @@
 import React from 'react'
 import TopNav from '../Components/NavBar/TopNav'
 
-const HomePage = () => {
+const Food = () => {
   return (
     <>
         <TopNav/>
+        Food
     </>
-    
   )
 }
 
-export default HomePage
+export default Food
