@@ -72,6 +72,21 @@ date date,
 foreign key (trans_id) references payment_transaction(trans_id)
 );
 
-create table payment_bill
+create table permission(
+cus_id int,
+status int
+foreign key (cus_id) references customer(cus_id)
+);
 
+create table category(
+cus_id int,
+room_id int,
+food_id int,
+type varchar(20),
+name varchar(50),
+foreign key (cus_id) references customer(cus_id),
+foreign key (room_id) references room(room_id),
+foreign key (food_id) references food(food_id)
+
+);
 
