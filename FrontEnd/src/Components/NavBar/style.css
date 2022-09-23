@@ -4,6 +4,7 @@
 
 .topNavCross{
     background: linear-gradient(90deg, rgba(246,222,245,1) 0%, rgba(233,233,247,1) 50%, rgba(228,246,250,1) 100%);
+    position: relative;
 }
 
 .linksFor{
