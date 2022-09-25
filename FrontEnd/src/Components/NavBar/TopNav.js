@@ -53,6 +53,11 @@ const TopNav = () => {
                                             <Link to="/login" className='theLink'>LOGIN</Link>
                                         </NavLink>
                                     </Nav.Link>
+                                    <Nav.Link href="#" className='linksFor text-center my-1 p-3'>
+                                        <NavLink>
+                                            <Link to="/reg" className='theLink'>REGISTER</Link>
+                                        </NavLink>
+                                    </Nav.Link>
                                 </Nav>
 
                             </Offcanvas.Body>

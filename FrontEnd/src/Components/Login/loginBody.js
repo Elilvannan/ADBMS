@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import imgbg from '../../Source/Images/Login/bg.jpg'
+import './style.css'
 
 const LoginBody = () => {
     const [userName, setUserName] = useState('');
@@ -10,18 +12,21 @@ const LoginBody = () => {
     const [loginStatus, setLoginStatus] = useState("")
 
     const loginHandler = (e) => {
-        
+        Axios.get('http://localhost:8080/checkLogin').then((response) => {
+
+            console.log(response.data);
+        });
     }
     return (
-        <div className='row'>
-            <div className='col-md-6'>
+        <div className='row '>
+            <div className='col-md-6 loginSet'>
                 <div className='row'>
                     <h3>LOGIN</h3>
                 </div>
-                <div className='row mx-5 my-3 d-flex d-flex flex-column justify-content-end align-items-end'>
+                <div className='row mx-5 my-3 d-flex flex-column justify-content-end align-items-end'>
                     <div className='container'>
                         <Form aut>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
                                 <Form.Label>User Name</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -36,7 +41,7 @@ const LoginBody = () => {
                                 </Form.Text>
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control
                                     type="password"
@@ -48,7 +53,7 @@ const LoginBody = () => {
                                 />
                             </Form.Group>
                             <div className='row'>
-                                <div className='col-md-12 '>
+                                <div className='col-md-12 mb-3 d-flex flex-row align-items-end'>
                                     <Button variant="danger" className='mx-2' type="reset">
                                         RESET
                                     </Button>
@@ -61,6 +66,14 @@ const LoginBody = () => {
                         </Form>
                     </div>
                 </div>
+            </div>
+            <div className='col-md-6'>
+                <h1 className='theTopicLogin'>LOGIN</h1>
+                <img
+                    src={imgbg}
+                    alt="loginBg"
+                    className='loginImg'
+                />
             </div>
         </div>
     )

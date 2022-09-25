@@ -9,7 +9,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
+import Register from './Pages/register';
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/food" element={<Food/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/reg" element={<Register/>}/>
         </Routes>
       </Router>
 

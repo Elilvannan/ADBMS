@@ -18,7 +18,7 @@ public class MyControllers {
 
     @RequestMapping("/")
     public String index(){
-        return "Welcome to hotel";
+        return "Welcome to hotel";  
 
     }
 

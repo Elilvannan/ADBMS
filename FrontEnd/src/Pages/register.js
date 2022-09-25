@@ -1,14 +1,14 @@
 import React from 'react'
-import LoginBody from '../Components/Login/loginBody'
 import TopNav from '../Components/NavBar/TopNav'
+import RegiBody from '../Components/Register/RegiBody'
 
-const Login = () => {
+const Register = () => {
   return (
     <div>
         <TopNav/>
-        <LoginBody/>
+        <RegiBody/>
     </div>
   )
 }
 
-export default Login
+export default Register
