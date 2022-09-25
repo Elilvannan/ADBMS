@@ -50,7 +50,7 @@ const TopNav = () => {
                                     </Nav.Link>
                                     <Nav.Link href="#" className='linksFor text-center my-1 p-3'>
                                         <NavLink>
-                                            <Link to="/n" className='theLink'>LOGIN</Link>
+                                            <Link to="/login" className='theLink'>LOGIN</Link>
                                         </NavLink>
                                     </Nav.Link>
                                 </Nav>

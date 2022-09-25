@@ -1,5 +1,7 @@
 import './App.css';
 import HomePage from './Pages';
+import Food from './Pages/food';
+import Login from './Pages/login';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -7,8 +9,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Food from './Pages/food';
-import Login from './Pages/login';
+
 
 function App() {
   return (

@@ -9,7 +9,7 @@ post varchar(60),
 primary key(user_name));
 
 insert into users(user_name,password,post)
-values('admin',CONVERT(varchar, DecryptByKey('123')),'admin')
+values('admin','123','admin')
 
 drop table users
 
