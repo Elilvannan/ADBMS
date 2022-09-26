@@ -90,3 +90,14 @@ foreign key (food_id) references food(food_id)
 
 );
 
+
+--Triggers
+
+CREATE TRIGGER CreateUser ON dbo.customer
+FOR INSERT
+AS
+BEGIN
+DECLARE @cus_id varchar(255)
+SELECT @cus_id = ins.cus_id from inserted ins;
+insert into users values(@cus_id,'123','customer');
+END
