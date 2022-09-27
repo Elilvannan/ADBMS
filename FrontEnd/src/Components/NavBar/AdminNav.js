@@ -8,6 +8,9 @@ import { Link, NavLink } from "react-router-dom";
 
 const AdminNav = () => {
     let user = localStorage.getItem('theUserName');
+    function logOut(){
+        localStorage.removeItem('theUserName');
+    }
   return (
     <>
             {[false].map((expand) => (
@@ -45,7 +48,7 @@ const AdminNav = () => {
                                     </Nav.Link>
                                     <Nav.Link href="#" className='linksFor text-center my-1 p-3'>
                                         <NavLink>
-                                            <Link to="/reg" className='theLink'>LOGOUT</Link>
+                                            <Link to="/" onClick={logOut} className='theLink'>LOGOUT</Link>
                                         </NavLink>
                                     </Nav.Link>
                                 </Nav>
