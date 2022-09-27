@@ -21,6 +21,7 @@ dob date,
 nic_number varchar(50),
 gender varchar(20),
 address varchar(30),
+email varchar(100),
 tel_no int(10),
 
 foreign key (cus_name) references users(user_name),

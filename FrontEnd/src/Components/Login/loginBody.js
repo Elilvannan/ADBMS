@@ -5,17 +5,38 @@ import Axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import imgbg from '../../Source/Images/Login/bg.jpg'
 import './style.css'
+import md5 from 'md5'
 
 const LoginBody = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const [loginStatus, setLoginStatus] = useState("")
+    const [userDetails, setUserDetails] = useState([]);
+    const [loginStatus, setLoginStatus] = useState("");
+    const nav = useNavigate();
 
     const loginHandler = (e) => {
         Axios.get('http://localhost:8080/checkLogin').then((response) => {
-
-            console.log(response.data);
+            setUserDetails(response.data);
         });
+
+        
+        userDetails.map((val)=>{
+            if(userName === val.name){
+                if(md5(password) === val.password){
+                    if(val.post === 'admin'){
+                        setLoginStatus(userName);
+                        let theUser = localStorage.setItem('theUserName',userName);
+                        nav('/AdminDash');
+                    }else{
+                        console.log(md5("Customer"));
+                    }
+                }else{
+                    alert('password is wrong');
+                }
+            }else{
+                alert('User name is wrong');
+            }
+        })
     }
     return (
         <div className='row '>

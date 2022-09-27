@@ -10,6 +10,7 @@ import {
   Route,
 } from "react-router-dom";
 import Register from './Pages/register';
+import AdminDashboard from './Pages/admin';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/food" element={<Food/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/reg" element={<Register/>}/>
+          <Route path="/AdminDash" element={<AdminDashboard/>}/>
         </Routes>
       </Router>
 

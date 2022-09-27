@@ -8,11 +8,13 @@ import './style.css'
 
 const RegiBody = () => {
     const [userName, setUserName] = useState('');
-    const [password, setPassword] = useState('');
-    const [rePassword, setRePassword] = useState('');
-    const [loginStatus, setLoginStatus] = useState("")
+    const [nic, setNic] = useState('');
+    const [dob, setDOB] = useState('');
+    const [email, setEmail] = useState('');
+    const [mobile, setMobile] = useState('');
+    const [address, setAddress] = useState('');
 
-    const loginHandler = (e) => {
+    const registerHandler = (e) => {
         Axios.get('http://localhost:8080/checkLogin').then((response) => {
 
             console.log(response.data);
@@ -56,7 +58,7 @@ const RegiBody = () => {
 
                                 </div>
                                 <div className='col-md-6'>
-                                
+
                                     <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
                                         <Form.Label>NIC</Form.Label>
                                         <Form.Control
@@ -64,7 +66,7 @@ const RegiBody = () => {
                                             placeholder="Enter your NIC"
                                             name="nic"
                                             onChange={(e) => {
-                                                setUserName(e.target.value)
+                                                setNic(e.target.value)
                                             }}
                                         />
                                         <Form.Text className="text-muted">
@@ -77,7 +79,13 @@ const RegiBody = () => {
                                 <div className='col-md-6'>
                                     <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicPassword">
                                         <Form.Label>DOB</Form.Label>
-                                        <input type="date" className='form-control' />
+                                        <input
+                                            type="date"
+                                            className='form-control'
+                                            onChange={(e) => {
+                                                setDOB(e.target.value)
+                                            }}
+                                        />
                                         <Form.Text className="text-muted">
                                             SELECT YOUR Date of Birth
                                         </Form.Text>
@@ -109,7 +117,9 @@ const RegiBody = () => {
                                             type="email"
                                             placeholder="email"
                                             name="email"
-
+                                            onChange={(e) => {
+                                                setEmail(e.target.value)
+                                            }}
                                         />
                                         <Form.Text className="text-muted">
                                             Enter a valid email
@@ -124,6 +134,9 @@ const RegiBody = () => {
                                             placeholder="0777..."
                                             name="mobile"
                                             className='form-control'
+                                            onChange={(e) => {
+                                                setMobile(e.target.value)
+                                            }}
                                         />
                                         <Form.Text className="text-muted">
                                             Enter a valid mobile
@@ -137,7 +150,9 @@ const RegiBody = () => {
                                     type="text"
                                     placeholder="Address"
                                     name="address"
-
+                                    onChange={(e) => {
+                                        setAddress(e.target.value)
+                                    }}
                                 />
                                 <Form.Text className="text-muted">
                                     Enter a valid address
@@ -148,7 +163,7 @@ const RegiBody = () => {
                                     <Button variant="danger" className='mx-2' type="reset">
                                         RESET
                                     </Button>
-                                    <Button variant="primary" type="button" onClick={loginHandler}>
+                                    <Button variant="primary" type="button" onClick={registerHandler}>
                                         SIGNUP
                                     </Button>
                                 </div>
