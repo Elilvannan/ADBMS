@@ -21,13 +21,13 @@ const RegiBody = () => {
     return (
         <div className='row '>
             <div className='col-md-6'>
-            <h1 className='theTopic'>SIGNUP</h1>
+                <h1 className='theTopic'>SIGNUP</h1>
                 <img
                     src={imgbg}
                     alt="loginBg"
                     className='signImg'
                 />
-                
+
             </div>
             <div className='col-md-6 signSet'>
                 <div className='row'>
@@ -36,63 +36,43 @@ const RegiBody = () => {
                 <div className='row mx-5 my-3'>
                     <div className='container'>
                         <Form autoComplete='false'>
-                            <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
-                                <Form.Label>User Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Enter username "
-                                    name="uname"
-                                    onChange={(e) => {
-                                        setUserName(e.target.value)
-                                    }}
-                                />
-                                <Form.Text className="text-muted">
-                                    You have to use this for login
-                                </Form.Text>
-                            </Form.Group>
 
-                            <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Password"
-                                    name="pw"
-                                    onChange={(e) => {
-                                        setPassword(e.target.value)
-                                    }}
-                                />
-                                <Form.Text className="text-muted">
-                                    Set a strong password
-                                </Form.Text>
-                            </Form.Group>
-                            <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicPassword">
-                                <Form.Label>Re-Enter Password</Form.Label>
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Re-Enter Password"
-                                    name="pw2"
-                                    onChange={(e) => {
-                                        setPassword(e.target.value)
-                                    }}
-                                />
-                                <Form.Text className="text-muted">
-                                    Re enter your previous password
-                                </Form.Text>
-                            </Form.Group>
-                            <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicPassword">
-                                <Form.Label>Re-Enter Password</Form.Label>
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Re-Enter Password"
-                                    name="pw"
-                                    onChange={(e) => {
-                                        setRePassword(e.target.value)
-                                    }}
-                                />
-                                <Form.Text className="text-muted">
-                                    Re enter your previous password
-                                </Form.Text>
-                            </Form.Group>
+                            <div className='row'>
+                                <div className='col-md-6'>
+                                    <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
+                                        <Form.Label>Name</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter username "
+                                            name="uname"
+                                            onChange={(e) => {
+                                                setUserName(e.target.value)
+                                            }}
+                                        />
+                                        <Form.Text className="text-muted">
+                                            You have to use this for login
+                                        </Form.Text>
+                                    </Form.Group>
+
+                                </div>
+                                <div className='col-md-6'>
+                                
+                                    <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
+                                        <Form.Label>NIC</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter your NIC"
+                                            name="nic"
+                                            onChange={(e) => {
+                                                setUserName(e.target.value)
+                                            }}
+                                        />
+                                        <Form.Text className="text-muted">
+                                            You have to use this for login
+                                        </Form.Text>
+                                    </Form.Group>
+                                </div>
+                            </div>
                             <div className='row'>
                                 <div className='col-md-6'>
                                     <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicPassword">
@@ -152,17 +132,17 @@ const RegiBody = () => {
                                 </div>
                             </div>
                             <Form.Group className="mb-3 d-flex flex-column align-items-start" controlId="formBasicPassword">
-                                        <Form.Label>Address</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Address"
-                                            name="address"
+                                <Form.Label>Address</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Address"
+                                    name="address"
 
-                                        />
-                                        <Form.Text className="text-muted">
-                                            Enter a valid address
-                                        </Form.Text>
-                                    </Form.Group>
+                                />
+                                <Form.Text className="text-muted">
+                                    Enter a valid address
+                                </Form.Text>
+                            </Form.Group>
                             <div className='row '>
                                 <div className='col-md-12 d-flex flex-row align-items-end'>
                                     <Button variant="danger" className='mx-2' type="reset">
