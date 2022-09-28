@@ -1,4 +1,5 @@
 import React from 'react'
+import DashBody from '../Components/admin/dashBody';
 import AdminNav from '../Components/NavBar/AdminNav'
 
 const AdminDashboard = () => {
@@ -16,7 +17,7 @@ const AdminDashboard = () => {
         return (
             <div>
                 <AdminNav />
-                Dashboard
+                <DashBody/>
             </div>
         )
     }

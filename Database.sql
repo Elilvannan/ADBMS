@@ -3,7 +3,7 @@ create database HOTELMS
 USE HOTELMS
 
 
-CREATE TABLE users(
+drop TABLE users(
 user_name varchar(255),
 password varchar(255),
 post varchar(60),

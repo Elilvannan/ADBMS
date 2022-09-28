@@ -6,6 +6,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import './style.css'
 import { Link, NavLink } from "react-router-dom";
 
+
 const AdminNav = () => {
     let user = localStorage.getItem('theUserName');
     function logOut(){
@@ -33,17 +34,17 @@ const AdminNav = () => {
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
                                     <Nav.Link href="#action1"  className='linksFor text-center my-1 p-3'>
                                         <NavLink>
-                                            <Link to="/" className='theLink'>DASHBOARD</Link>
+                                            <Link to="/AdminDash" className='theLink'>DASHBOARD</Link>
                                         </NavLink>
                                     </Nav.Link>
                                     <Nav.Link href="#action2" className='linksFor text-center my-1 p-3'>
                                         <NavLink>
-                                            <Link to="/food" className='theLink'>FOODS</Link>
+                                            <Link to="/foodsAdmin" className='theLink'>FOODS</Link>
                                         </NavLink>
                                     </Nav.Link>
                                     <Nav.Link href="#" className='linksFor text-center my-1 p-3'>
                                         <NavLink>
-                                            <Link to="/n" className='theLink'>ROOMS</Link>
+                                            <Link to="/roomsAdmin" className='theLink'>ROOMS</Link>
                                         </NavLink>
                                     </Nav.Link>
                                     <Nav.Link href="#" className='linksFor text-center my-1 p-3'>

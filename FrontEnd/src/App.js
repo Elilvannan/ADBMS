@@ -11,6 +11,8 @@ import {
 } from "react-router-dom";
 import Register from './Pages/register';
 import AdminDashboard from './Pages/admin';
+import AdminFoods from './Pages/adminFoods';
+import AdminRooms from './Pages/adminRooms';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/reg" element={<Register/>}/>
           <Route path="/AdminDash" element={<AdminDashboard/>}/>
+          <Route path="/foodsAdmin" element={<AdminFoods/>}/>
+          <Route path="/roomsAdmin" element={<AdminRooms/>}/>
         </Routes>
       </Router>
 
