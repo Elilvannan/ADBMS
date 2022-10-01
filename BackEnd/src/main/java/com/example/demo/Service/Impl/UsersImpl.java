@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Domain.Customer;
 import com.example.demo.Domain.Foods;
 import com.example.demo.Domain.Users;
+import com.example.demo.Repositories.CustomerRepo;
 import com.example.demo.Repositories.FoodsRepo;
 import com.example.demo.Repositories.UsersRepo;
 import com.example.demo.Service.UsersServ;
@@ -20,6 +22,9 @@ public class UsersImpl implements UsersServ{
 	@Autowired
 	private FoodsRepo foodsRepo;
 
+	@Autowired
+	private CustomerRepo customerRepo;
+
 	@Override
 	public List<Users> getAllUsers() {
 		return usersRepo.findAll();
@@ -28,6 +33,17 @@ public class UsersImpl implements UsersServ{
 	@Override
 	public List<Foods> getAllFoods() {
 		return foodsRepo.findAll();
+	}
+
+	@Override
+	public String AddNewCus(Users user) {
+		usersRepo.save(user);
+		return "Inserted";
+	}
+
+	@Override
+	public List<Customer> getAllCus() {
+		return customerRepo.findAll();
 	}
 	
 

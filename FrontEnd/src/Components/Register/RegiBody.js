@@ -15,9 +15,16 @@ const RegiBody = () => {
     const [address, setAddress] = useState('');
 
     const registerHandler = (e) => {
-        Axios.get('http://localhost:8080/checkLogin').then((response) => {
-
-            console.log(response.data);
+        Axios.post('http://localhost:8080/register', {
+            user_name: userName,
+            nic : nic,
+            dob : dob,
+            mail : email,
+            mobile : mobile,
+            address : address
+        }).then((response)=>{
+            console.log(response);
+            
         });
     }
     return (

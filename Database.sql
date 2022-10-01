@@ -49,7 +49,10 @@ food_desc varchar(255)
 );
 
 insert into food(food_name,food_price,food_image,food_category,food_desc)
-values('Biriyani',550.00,'../public/Foods/1.jpg','Lunch','The best dum briyani')
+values
+('Nasigurang',650.00,'../../public/Foods/2.jpg','Lunch','The best Nasigurang. In baasmathi rice')
+('Chicken Fry',750.00,'../../public/Foods/3.jpg','Starter','Best chicken fry')
+('Chicken BBQ',1650.00,'../../public/Foods/4.jpg','Lunch','Full chicken BBQ')
 
 
 
