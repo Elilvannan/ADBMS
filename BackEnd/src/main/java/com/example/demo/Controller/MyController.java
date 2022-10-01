@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Domain.Foods;
 import com.example.demo.Domain.Users;
 import com.example.demo.Service.UsersServ;
 
@@ -25,5 +26,10 @@ public class MyController {
 	@GetMapping("/checkLogin")
 	public List<Users> allUsers() {
 		return usersServ.getAllUsers();
+	}
+	
+	@GetMapping("/getFoods")
+	public List<Foods> alFoods() {
+		return usersServ.getAllFoods();
 	}
 }
