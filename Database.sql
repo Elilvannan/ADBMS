@@ -2,13 +2,6 @@ create database HOTELMS
 
 USE HOTELMS
 
-create TABLE users(
-user_id int auto_increment primary key,
-user_name varchar(255),
-password varchar(255),
-post varchar(60),
-foreign key(user_name) references customer(cus_name));
-
 create table customer(
     cus_name varchar(255) primary key,
     cus_phone int(11),
@@ -18,6 +11,15 @@ create table customer(
     cus_gender varchar(20),
     cus_dob date
 )
+
+
+create TABLE users(
+user_id int auto_increment primary key,
+user_name varchar(255),
+password varchar(255),
+post varchar(60),
+foreign key(user_name) references customer(cus_name));
+
 
 /* Trigger to add new user account when customer register for the system */
 DELIMITER //
