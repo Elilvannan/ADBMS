@@ -39,6 +39,16 @@ BEGIN
 END //
 DELIMITER ;
 
+create table food(
+food_id int auto_increment primary key,
+food_name varchar(255),
+food_price float(10,2),
+food_image varchar(255),
+food_category varchar(255),
+food_desc varchar(255)
+);
+
+
 
 
     
