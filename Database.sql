@@ -48,6 +48,12 @@ food_category varchar(255),
 food_desc varchar(255)
 );
 
+insert into food(food_name,food_price,food_image,food_category,food_desc)
+values('Biriyani',550.00,'../public/Foods/1.jpg','Lunch','The best dum briyani')
+
+
+
+
 
 
 
