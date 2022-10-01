@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Axios from 'axios';
+import * as Icon from 'react-bootstrap-icons';
 
 const FoodsList = () => {
     const [foodDetails, setFoodDetails] = useState([]);
@@ -19,24 +20,24 @@ const FoodsList = () => {
                         Foods
                     </div>
                 </div>
-                <div className='row'>
+                <div className='row m-4'>
                     {
                         foodDetails.map((val) => {
                             console.log(val.food_name);
                             return <div className='col-md-3'>
                                 <Card style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={val.food_image} />
+                                    <Card.Img variant="top" src={val.food_image} className="m-4"/>
                                     <Card.Body>
                                         <Card.Title>{val.food_name}</Card.Title>
                                         <Card.Text>
                                             {val.food_desc}
                                         </Card.Text>
                                         <div className='row'>
-                                            <div className='col'>
-                                                <input type="number" className='form-control' />
+                                            <div className='col-md-9'>
+                                                <input type="number" min="1" className='form-control' />
                                             </div>
                                             <div className='col'>
-                                                <Button variant="primary">ADD TO CART</Button>
+                                                <Button variant="success"><Icon.Cart3/></Button>
                                             </div>
                                         </div>
 
