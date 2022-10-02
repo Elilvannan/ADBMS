@@ -42,13 +42,19 @@ public class MyController {
 	}
 	
 	@PostMapping("/register")
-	public Customer registerCus(@RequestBody Customer cus){
-		return customerRepo.save(cus);
+	public String registerCus(@RequestBody Customer cus){
+		return usersServ.AddNewCus(cus);
+		
+	}
+
+	@PostMapping("/addFood")
+	public String addFood(@RequestBody Foods food){
+		return usersServ.AddNewFood(food);
 	}
 
 	@GetMapping("/getCus")
 	public List<Customer> registerCus(){
-		return customerRepo.findAll();
+		return usersServ.getAllCus();
 	}
 	
 }

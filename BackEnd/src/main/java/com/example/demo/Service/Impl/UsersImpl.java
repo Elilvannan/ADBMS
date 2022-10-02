@@ -24,6 +24,7 @@ public class UsersImpl implements UsersServ{
 
 	@Autowired
 	private CustomerRepo customerRepo;
+	
 
 	@Override
 	public List<Users> getAllUsers() {
@@ -36,14 +37,20 @@ public class UsersImpl implements UsersServ{
 	}
 
 	@Override
-	public String AddNewCus(Users user) {
-		usersRepo.save(user);
-		return "Inserted";
+	public String AddNewCus(Customer cus) {
+		customerRepo.save(cus);
+		return ("Inserted");
 	}
 
 	@Override
 	public List<Customer> getAllCus() {
 		return customerRepo.findAll();
+	}
+
+	@Override
+	public String AddNewFood(Foods food) {
+		foodsRepo.save(food);
+		return "New food added";
 	}
 	
 

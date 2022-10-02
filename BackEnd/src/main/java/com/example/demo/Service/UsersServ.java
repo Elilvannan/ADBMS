@@ -11,7 +11,9 @@ public interface UsersServ{
 
 	public List<Foods> getAllFoods();
 
-    public String AddNewCus(Users user);
+    public String AddNewCus(Customer cus);
 
 	public  List<Customer> getAllCus();
+
+    public String AddNewFood(Foods food);
 }
