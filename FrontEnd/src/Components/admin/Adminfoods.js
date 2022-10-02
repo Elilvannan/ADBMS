@@ -26,7 +26,7 @@ const columns = [
 ];
 
 const AdminFoodPage = () => {
-    const [foods,setFoods] = useState([]);
+    const [foods, setFoods] = useState([]);
     useEffect(() => {
         Axios.get('http://localhost:8080/getFoods').then((response) => {
             setFoods(response.data);
@@ -38,16 +38,16 @@ const AdminFoodPage = () => {
                 <h2>FOODS</h2>
             </div>
             <DataTable
-            columns={columns}
-            data={foods}
-            selectableRows
-            selectableRowsHighlight
-            pagination
-            fixedHeader
-            fixedHeaderScrollHeight='70vh'
-            highlightOnHover
-            
-          />
+                columns={columns}
+                data={foods}
+                selectableRows
+                selectableRowsHighlight
+                pagination
+                fixedHeader
+                fixedHeaderScrollHeight='70vh'
+                highlightOnHover
+
+            />
         </div>
     )
 }
