@@ -60,6 +60,14 @@ update users set post="admin" where user_id=4
 
 
 /*rooms*/
+create table room(
+    room_id varchar(255) primary key,
+    Booking_status varchar(25),
+    room_occupancy int,
+    room_description varchar(255)
+)
+
+
 
 
 
