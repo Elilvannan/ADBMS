@@ -9,8 +9,12 @@ const Slider = () => {
     return (
         <>
             <div className='row slider'>
-                <Carousel>
-                    <Carousel.Item>
+                <Carousel
+                 controls={true}
+                 fade
+                 data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="300"
+                 >
+                    <Carousel.Item className='itemImg'>
                         <img
                             className="d-block w-100 simg"
                             src={img_3}

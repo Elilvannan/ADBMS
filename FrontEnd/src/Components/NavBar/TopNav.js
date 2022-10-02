@@ -28,12 +28,12 @@ const TopNav = () => {
                             </Offcanvas.Header>
                             <Offcanvas.Body>
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                                    <Nav.Link href="#action1"  className='linksFor text-center my-1 p-3'>
+                                    <Nav.Link href="/"  className='linksFor text-center my-1 p-3'>
                                         <NavLink>
                                             <Link to="/" className='theLink'>HOME</Link>
                                         </NavLink>
                                     </Nav.Link>
-                                    <Nav.Link href="#action2" className='linksFor text-center my-1 p-3'>
+                                    <Nav.Link href="/food" className='linksFor text-center my-1 p-3'>
                                         <NavLink>
                                             <Link to="/food" className='theLink'>FOOD</Link>
                                         </NavLink>
