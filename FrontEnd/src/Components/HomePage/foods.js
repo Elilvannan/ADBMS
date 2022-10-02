@@ -23,7 +23,6 @@ const FoodsList = () => {
                 <div className='row m-4'>
                     {
                         foodDetails.map((val) => {
-                            console.log(val.food_name);
                             return <div className='col-md-3'>
                                 <Card style={{ width: '18rem' }}>
                                     <Card.Img variant="top" src={val.food_image} className="m-4"/>
