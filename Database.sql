@@ -65,7 +65,21 @@ create table room(
     Booking_status varchar(25),
     room_occupancy int,
     room_description varchar(255)
-)
+);
+
+
+create table payment_transaction(
+trans_id int primary key,
+cus_id int,
+total_payment bigint,
+type varchar(50),
+date date,
+foreign key (cus_id) references customer(cus_name)
+);
+
+
+
+
 
 
 
