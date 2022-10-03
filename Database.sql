@@ -67,14 +67,15 @@ create table room(
     room_description varchar(255)
 );
 
+drop table payment_transaction;
 
 create table payment_transaction(
 trans_id int primary key,
-cus_id int,
+cus_name varchar(255),
 total_payment bigint,
 type varchar(50),
 date date,
-foreign key (cus_id) references customer(cus_name)
+foreign key (cus_name) references customer(cus_name)
 );
 
 
