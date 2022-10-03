@@ -26,11 +26,8 @@ const columns = [
 ];
 
 const AdminFoodPage = () => {
-<<<<<<< Updated upstream
+
     const [foods, setFoods] = useState([]);
-=======
-    const [foods,setFoods] = useState([]);
->>>>>>> Stashed changes
     useEffect(() => {
         Axios.get('http://localhost:8080/getFoods').then((response) => {
             setFoods(response.data);
@@ -42,7 +39,6 @@ const AdminFoodPage = () => {
                 <h2>FOODS</h2>
             </div>
             <DataTable
-<<<<<<< Updated upstream
                 columns={columns}
                 data={foods}
                 selectableRows
@@ -53,18 +49,6 @@ const AdminFoodPage = () => {
                 highlightOnHover
 
             />
-=======
-            columns={columns}
-            data={foods}
-            selectableRows
-            selectableRowsHighlight
-            pagination
-            fixedHeader
-            fixedHeaderScrollHeight='70vh'
-            highlightOnHover
-            
-          />
->>>>>>> Stashed changes
         </div>
     )
 }
