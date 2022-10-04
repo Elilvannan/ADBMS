@@ -77,7 +77,17 @@ type varchar(50),
 date date,
 foreign key (cus_name) references customer(cus_name)
 );
+create table category(
+cus_id int,
+room_id varchar(255),
+food_id int,
+type varchar(20),
+name varchar(50),
 
+foreign key (room_id) references room(room_id),
+foreign key (food_id) references food(food_id)
+
+);
 
 
 
