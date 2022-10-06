@@ -41,8 +41,8 @@ public class MyController {
 		return usersServ.getAllFoods();
 	}
 	
-	@PostMapping("/register")
-	public String registerCus(@RequestBody Customer cus){
+	@PostMapping("/addCus")
+	public String addCustomer(@RequestBody Customer cus){
 		return usersServ.AddNewCus(cus);
 		
 	}
