@@ -1,6 +1,6 @@
 create database HOTELMS
 
-USE HOTELMS
+USE HOTELMS;
 
 create table customer(
     cus_name varchar(255) primary key,
@@ -83,13 +83,29 @@ room_id varchar(255),
 food_id int,
 type varchar(20),
 name varchar(50),
-
 foreign key (room_id) references room(room_id),
 foreign key (food_id) references food(food_id)
 
 );
 
+create table payment_bill(
+bill_id int auto_increment primary key,
+trans_id int,
+amount bigint,
+type varchar(20),
+date date,
+foreign key (trans_id) references payment_transaction(trans_id)
+);
 
+create table invoice(
+invoice_id int auto_increment primary  key,
+status varchar(5),
+cus_name varchar(255),
+foreign key (cus_name) references customer(cus_name)
+);
+
+
+show tables;
 
 
 
