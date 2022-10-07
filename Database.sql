@@ -1,24 +1,23 @@
-create database HOTELMS
+create database HOTELMS;
 
 USE HOTELMS;
 
 create table customer(
-    cus_name varchar(255) primary key,
+	cus_id int auto_increment primary key,
+    cus_name varchar(255),
     cus_phone int(11),
     cus_address varchar(20),
     cus_email varchar(255),
     cus_nic varchar(20),
     cus_gender varchar(20),
     cus_dob date
-)
-
+);
 
 create TABLE users(
 user_id int auto_increment primary key,
 user_name varchar(255),
 password varchar(255),
-post varchar(60),
-foreign key(user_name) references customer(cus_name));
+post varchar(60));
 
 
 /* Trigger to add new user account when customer register for the system */
@@ -67,7 +66,6 @@ create table room(
     room_description varchar(255)
 );
 
-drop table payment_transaction;
 
 create table payment_transaction(
 trans_id int primary key,
