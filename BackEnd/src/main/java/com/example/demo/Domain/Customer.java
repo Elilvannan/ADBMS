@@ -11,6 +11,9 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="cus_id")
+    private int id;
+
     @Column(name="cus_name")
     private String cus_name;
 
@@ -32,6 +35,14 @@ public class Customer {
     @Column(name ="cus_dob")
     private Date dob; 
 
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
 
     public String getCus_name() {

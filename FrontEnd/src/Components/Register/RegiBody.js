@@ -11,21 +11,34 @@ const RegiBody = () => {
     const [nic, setNic] = useState('');
     const [dob, setDOB] = useState('');
     const [email, setEmail] = useState('');
+    const [gender, setGender] = useState('');
     const [mobile, setMobile] = useState('');
     const [address, setAddress] = useState('');
 
     const registerHandler = (e) => {
-        Axios.post('http://localhost:8080/register', {
-            user_name: userName,
-            nic : nic,
-            dob : dob,
-            mail : email,
-            mobile : mobile,
-            address : address
-        }).then((response)=>{
-            console.log(response);
-            
-        });
+        (async () => {
+            await fetch('http://localhost:8080/addCus', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(
+                    {
+                        "cus_name": userName,
+                        "phone": mobile,
+                        "address": address,
+                        "email": email,
+                        "nic": nic,
+                        "gender": gender,
+                        "dob": dob
+                    }
+                )
+            });
+            alert("User Created");
+        })();
+
+
     }
     return (
         <div className='row '>
@@ -100,20 +113,19 @@ const RegiBody = () => {
 
                                 </div>
                                 <div className='col-md-6'>
-                                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Label>GENDER</Form.Label>
-                                        <div className='row'>
-                                            <div className='col'>
-                                                <input type="radio" name='gen' value='male' /> MALE
-                                            </div>
-                                            <div className='col'>
-                                                <input type="radio" name='gen' value='female' />FEMALE
-                                            </div>
-
+                                    <div className='row'>
+                                        <Form.Label>Gender</Form.Label>
+                                        <div className='col-md-12'>
+                                            <select className='form-control' name='categ'
+                                                onChange={(e) => {
+                                                    setGender(e.target.value)
+                                                }}
+                                            >
+                                                <option value='M'>Male</option>
+                                                <option value='F'>Female</option>
+                                            </select>
                                         </div>
-
-
-                                    </Form.Group>
+                                    </div>
                                 </div>
                             </div>
                             <div className='row'>

@@ -79,7 +79,7 @@ const LoginBody = () => {
                                         RESET
                                     </Button>
                                     <Button variant="primary" type="button" onClick={loginHandler}>
-                                        LOGIN
+                                        ADD
                                     </Button>
                                 </div>
                             </div>
