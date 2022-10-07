@@ -51,12 +51,7 @@ insert into food(food_name,food_price,food_image,food_category,food_desc)
 values
 ('Nasigurang',650.00,'../../public/Foods/2.jpg','Lunch','The best Nasigurang. In baasmathi rice'),
 ('Chicken Fry',750.00,'../../public/Foods/3.jpg','Starter','Best chicken fry'),
-('Chicken BBQ',1650.00,'../../public/Foods/4.jpg','Lunch','Full chicken BBQ')
-
-select * from users
-update users set post="admin" where user_id=4
-
-
+('Chicken BBQ',1650.00,'../../public/Foods/4.jpg','Lunch','Full chicken BBQ');
 
 /*rooms*/
 create table room(
@@ -67,43 +62,38 @@ create table room(
 );
 
 
-create table payment_transaction(
-trans_id int primary key,
-cus_name varchar(255),
-total_payment bigint,
-type varchar(50),
-date date,
-foreign key (cus_name) references customer(cus_name)
-);
-create table category(
-cus_id int,
-room_id varchar(255),
-food_id int,
-type varchar(20),
-name varchar(50),
-foreign key (room_id) references room(room_id),
-foreign key (food_id) references food(food_id)
-
-);
-
-create table payment_bill(
-bill_id int auto_increment primary key,
-trans_id int,
-amount bigint,
-type varchar(20),
-date date,
-foreign key (trans_id) references payment_transaction(trans_id)
-);
-
-create table invoice(
-invoice_id int auto_increment primary  key,
-status varchar(5),
-cus_name varchar(255),
-foreign key (cus_name) references customer(cus_name)
-);
-
-
 show tables;
+
+create table cart(
+item_id int primary key,
+food_id int,
+cus_id int,
+foreign key(food_id) references food(food_id),
+foreign key(cus_id) references customer(cus_id)
+);
+
+
+create table employee(emp_id varchar(255),
+emp_name varchar(255),
+emp_age int,
+emp_gender varchar(255),
+emp_doj varchar(255),
+emp_position varchar(255),
+emp_address varchar(255)
+);
+
+create table invoice(invoice_id int primary key, 
+cus_id int,
+item_id int,
+invoice_date date,
+amount float(8,2),
+foreign key(cus_id) references customer(cus_id),
+foreign key(item_id) references cart(item_id ),
+quantity int,
+price float(8,2)
+);
+
+
 
 
 
