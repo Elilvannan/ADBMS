@@ -16,6 +16,8 @@ public interface UsersServ{
 
 	public  List<Customer> getAllCus();
 
+	public List<Cart> getAllCartItems();
+
     public String AddNewFood(Foods food);
 
 	public String AddToCart(Cart cart);

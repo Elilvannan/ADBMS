@@ -53,6 +53,11 @@ public class UsersImpl implements UsersServ{
 	}
 
 	@Override
+	public List<Cart> getAllCartItems() {
+		return cartRepo.findAll();
+	}
+
+	@Override
 	public String AddNewFood(Foods food) {
 		foodsRepo.save(food);
 		return "New food added";
@@ -63,6 +68,8 @@ public class UsersImpl implements UsersServ{
 		cartRepo.save(cart);
 		return "Added to cart";
 	}
+
+	
 	
 
 }

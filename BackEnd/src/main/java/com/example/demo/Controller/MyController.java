@@ -64,6 +64,11 @@ public class MyController {
 	public String addToCart(@RequestBody Cart cart){
 		return usersServ.AddToCart(cart);
 	}
+
+	@GetMapping("/getCart")
+	public List<Cart> getAllCart(){
+		return usersServ.getAllCartItems();
+	}
 	
 	
 }

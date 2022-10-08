@@ -28,6 +28,7 @@ const LoginBody = () => {
                     }else{
                         setLoginStatus(userName);
                         let theUser = localStorage.setItem('theUserName',userName);
+                        let theId = localStorage.setItem('theId',val.cid);
                         nav('/');
                     }
                 }else{

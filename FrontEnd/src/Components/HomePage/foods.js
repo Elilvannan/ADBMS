@@ -5,11 +5,15 @@ import Axios from 'axios';
 import * as Icon from 'react-bootstrap-icons';
 import { NavLink, useNavigate } from 'react-router-dom';
 
+
+
+
 const FoodsList = () => {
     let user = localStorage.getItem('theUserName');
-    console.log(user);
+    let theId = localStorage.getItem('theId');
     const [foodDetails, setFoodDetails] = useState([]);
     const [quantity, setQuantity] = useState(0);
+
     useEffect(() => {
         Axios.get('http://localhost:8080/getFoods').then((response) => {
 
@@ -17,8 +21,9 @@ const FoodsList = () => {
         });
     }, []);
     let navigate = useNavigate();
-    const addToCart = (e, param) => {
-
+    const addToCart = (e, quan,price) => {
+        let totalPrice = quan*price;
+        console.log(totalPrice);
         if (user == null) {
             let path = `/login`;
             navigate(path);
@@ -33,8 +38,10 @@ const FoodsList = () => {
                     },
                     body: JSON.stringify(
                         {
-                            "food_name": param,
-                            "quantity": quantity
+                                "food_id":quan,
+                                "cus_id":theId,
+                                "quantity":quantity,
+                                "price":totalPrice
                         }
                     )
                 });
@@ -73,7 +80,7 @@ const FoodsList = () => {
                                                 />
                                             </div>
                                             <div className='col'>
-                                                <Button variant="success" onClick={event => addToCart(event, val.food_id)}><Icon.Cart3 /></Button>
+                                                <Button variant="success" onClick={event => addToCart(event, val.food_id, val.food_price)}><Icon.Cart3 /></Button>
                                             </div>
                                         </div>
 
@@ -94,6 +101,8 @@ const FoodsList = () => {
                     </Card>
                 </div>
             </div>
+
+           
 
         </>
     )

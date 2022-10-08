@@ -21,6 +21,12 @@ public class Cart {
     @Column(name="cus_id")
     private int cus_id;
 
+    @Column(name="quantity")
+    private int quantity;
+
+    @Column(name="price")
+    private float price;
+
 
     public int getItem_id() {
         return this.item_id;
@@ -46,6 +52,22 @@ public class Cart {
         this.cus_id = cus_id;
     }
 
+
+    public int getQuantity() {
+        return this.quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public float getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
     
 
     

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,17 +7,74 @@ import './style.css'
 import { Link, NavLink } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import DataTable from 'react-data-table-component';
+import Axios from 'axios';
+import Modal from 'react-bootstrap/Modal';
 
+const columns = [
+    {
+        name: 'ID',
+        selector: row => row.item_id,
+        sortable: true,
+    },
+    {
+        name: 'QUANTITY',
+        selector: row => row.quantity,
+        sortable: true,
+    },
+    {
+        name: 'PRICE',
+        selector: row => row.price,
+        sortable: true,
+    }
+];
 
 const TopNav = () => {
     let user = localStorage.getItem('theUserName');
+    let theId = localStorage.getItem('theId');
+
+    const [cartDetails, setCartDetails] = useState([]);
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+
+    
     function logOut() {
         localStorage.removeItem('theUserName');
         window.location.reload();
     }
 
+    const getCart = (id) =>{
+        console.log(id);
+        setShow(true);
+        Axios.get('http://localhost:8080/getCart/{id}').then((response) => {
+
+            setCartDetails(response.data);
+        });
+    }
+
     return (
         <>
+         <Modal show={show} onHide={handleClose} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>YOUR CART</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <DataTable
+                columns={columns}
+                data={cartDetails}
+                selectableRows
+                selectableRowsHighlight
+                pagination
+                fixedHeader
+                fixedHeaderScrollHeight='70vh'
+                highlightOnHover
+
+            />
+                </Modal.Body>
+
+            </Modal>
+
+
             {[false].map((expand) => (
                 <Navbar key={expand} bg="light" expand={expand} className="mb-3 topNavCross">
                     <Container fluid>
@@ -27,7 +84,7 @@ const TopNav = () => {
                                 <div className='col-md-4'>
                                 <div className='d-flex content-align-center justify-content-end' >
                                         <DropdownButton variant="default" title={user}>
-                                            <Dropdown.Item href="#/action-2">CART</Dropdown.Item>
+                                            <Dropdown.Item href="#/action-2"  onClick={event => getCart(theId)}>CART</Dropdown.Item>
                                             <Dropdown.Item href="#/action-3" onClick={logOut}>LOGOUT</Dropdown.Item>
                                         </DropdownButton>
 
