@@ -5,6 +5,7 @@ import { Button, Form } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import * as Icon from 'react-bootstrap-icons';
 
+
 const columns = [
     {
         name: 'NO',
@@ -170,7 +171,7 @@ const AdminFoodPage = () => {
                                     RESET
                                 </Button>
                                 <Button variant="primary" type="button" onClick={addNewFood}>
-                                    LOGIN
+                                    ADD
                                 </Button>
                             </div>
                         </div>

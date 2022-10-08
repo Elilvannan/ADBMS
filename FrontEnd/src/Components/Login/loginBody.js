@@ -18,8 +18,6 @@ const LoginBody = () => {
         Axios.get('http://localhost:8080/checkLogin').then((response) => {
             setUserDetails(response.data);
         });
-
-        
         userDetails.map((val)=>{
             if(userName === val.name){
                 if(md5(password) === val.password){
@@ -28,7 +26,9 @@ const LoginBody = () => {
                         let theUser = localStorage.setItem('theUserName',userName);
                         nav('/AdminDash');
                     }else{
-                        console.log(md5("Customer"));
+                        setLoginStatus(userName);
+                        let theUser = localStorage.setItem('theUserName',userName);
+                        nav('/');
                     }
                 }else{
                     alert('password is wrong');
@@ -79,7 +79,7 @@ const LoginBody = () => {
                                         RESET
                                     </Button>
                                     <Button variant="primary" type="button" onClick={loginHandler}>
-                                        ADD
+                                        LOGIN
                                     </Button>
                                 </div>
                             </div>

@@ -17,23 +17,27 @@ create TABLE users(
 user_id int auto_increment primary key,
 user_name varchar(255),
 password varchar(255),
-post varchar(60));
+post varchar(60),
+cus_id int
+);
 
 
 /* Trigger to add new user account when customer register for the system */
 DELIMITER //
-CREATE trigger createUserAccount
+create trigger createUserAccount
 AFTER INSERT ON customer
 FOR EACH ROW
 BEGIN
 	DECLARE user_name varchar(255);
 	DECLARE nic_as_pw varchar(255);
     DECLARE post varchar(255);
+    DECLARE cus_id int;
     
     SET post = "customer";
     SET user_name = NEW.cus_name;
     SET nic_as_pw = NEW.cus_nic;
-    insert into users(user_name,password,post) values(user_name,md5(nic_as_pw),post);
+    SET cus_id = NEW.cus_id;
+    insert into users(user_name,password,post,cus_id) values(user_name,md5(nic_as_pw),post,cus_id);
     
 END //
 DELIMITER ;

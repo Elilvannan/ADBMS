@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name="user_id")
 	private int id;
 
 	@Column(name="user_name")
@@ -47,7 +47,6 @@ public class Users {
 	}
 	public void setPost(String post) {
 		this.post = post;
-	}
-	
+	}	
 	
 }
