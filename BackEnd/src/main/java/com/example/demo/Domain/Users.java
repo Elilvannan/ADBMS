@@ -23,6 +23,9 @@ public class Users {
 
 	@Column(name="post")
 	private String post;
+
+	@Column(name="cus_id")
+	private int cid;
 	
 	public int getId() {
 		return id;
@@ -48,5 +51,13 @@ public class Users {
 	public void setPost(String post) {
 		this.post = post;
 	}	
+
+	public int getCid() {
+		return this.cid;
+	}
+
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
 	
 }

@@ -62,7 +62,9 @@ create table room(
     room_id varchar(255) primary key,
     Booking_status varchar(25),
     room_occupancy int,
-    room_description varchar(255)
+    room_description varchar(255),
+    cus_id int,
+    foreign key(cus_id) references customer(cus_id)
 );
 
 
@@ -96,6 +98,14 @@ quantity int,
 price float(8,2)
 );
 
+create table food_orders(
+	order_id int auto_increment primary key,
+    food_id int,
+    food_name varchar(255),
+    cus_id int,
+    foreign key(food_id) references food(food_id),
+    foreign key(cus_id) references customer(cus_id)
+);
 
 
 
