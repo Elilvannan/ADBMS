@@ -2,6 +2,7 @@ package com.example.demo.Service;
 
 import java.util.List;
 
+import com.example.demo.Domain.Cart;
 import com.example.demo.Domain.Customer;
 import com.example.demo.Domain.Foods;
 import com.example.demo.Domain.Users;
@@ -16,4 +17,6 @@ public interface UsersServ{
 	public  List<Customer> getAllCus();
 
     public String AddNewFood(Foods food);
+
+	public String AddToCart(Cart cart);
 }

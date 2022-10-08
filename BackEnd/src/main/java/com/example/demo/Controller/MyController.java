@@ -2,6 +2,8 @@ package com.example.demo.Controller;
 
 import java.util.List;
 
+import javax.smartcardio.Card;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Domain.Cart;
 import com.example.demo.Domain.Customer;
 import com.example.demo.Domain.Foods;
 import com.example.demo.Domain.Users;
@@ -41,6 +44,11 @@ public class MyController {
 		return usersServ.getAllFoods();
 	}
 	
+	@GetMapping("/getCus")
+	public List<Customer> registerCus(){
+		return usersServ.getAllCus();
+	}
+
 	@PostMapping("/addCus")
 	public String addCustomer(@RequestBody Customer cus){
 		return usersServ.AddNewCus(cus);
@@ -52,9 +60,10 @@ public class MyController {
 		return usersServ.AddNewFood(food);
 	}
 
-	@GetMapping("/getCus")
-	public List<Customer> registerCus(){
-		return usersServ.getAllCus();
+	@PostMapping("/addToCart")
+	public String addToCart(@RequestBody Cart cart){
+		return usersServ.AddToCart(cart);
 	}
+	
 	
 }

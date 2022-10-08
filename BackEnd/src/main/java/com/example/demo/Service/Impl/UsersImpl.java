@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Domain.Cart;
 import com.example.demo.Domain.Customer;
 import com.example.demo.Domain.Foods;
 import com.example.demo.Domain.Users;
+import com.example.demo.Repositories.CartRepo;
 import com.example.demo.Repositories.CustomerRepo;
 import com.example.demo.Repositories.FoodsRepo;
 import com.example.demo.Repositories.UsersRepo;
@@ -24,6 +26,9 @@ public class UsersImpl implements UsersServ{
 
 	@Autowired
 	private CustomerRepo customerRepo;
+
+	@Autowired
+	private CartRepo cartRepo;
 	
 
 	@Override
@@ -51,6 +56,12 @@ public class UsersImpl implements UsersServ{
 	public String AddNewFood(Foods food) {
 		foodsRepo.save(food);
 		return "New food added";
+	}
+
+	@Override
+	public String AddToCart(Cart cart) {
+		cartRepo.save(cart);
+		return "Added to cart";
 	}
 	
 
