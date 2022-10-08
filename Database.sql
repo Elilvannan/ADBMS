@@ -73,7 +73,8 @@ show tables;
 create table cart(
 item_id int primary key,
 food_id int,
-cus_name varchar(255),
+cus_id int,
+foreign key(cus_id) references customer(cus_id),
 foreign key(food_id) references food(food_id)
 );
 
