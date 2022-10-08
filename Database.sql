@@ -108,6 +108,14 @@ create table food_orders(
     foreign key(cus_id) references customer(cus_id)
 );
 
+--  procedure
+ DELIMITER $
+ CREATE PROCEDURE View_Add_To_Cart_Items(IN ID INT)
+BEGIN
+	SELECT c.food_id,f.food_name FROM cart as c,food as f where c.cus_id = ID;
+END$
+DELIMITER ;
+
 
 
 
