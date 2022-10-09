@@ -14,6 +14,7 @@ import AdminDashboard from './Pages/admin';
 import AdminFoods from './Pages/adminFoods';
 import AdminRooms from './Pages/adminRooms';
 import AdminCustomersPage from './Pages/adminCustomers';
+import AdminInvoice from './Pages/adminInvoice';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/foodsAdmin" element={<AdminFoods/>}/>
           <Route path="/roomsAdmin" element={<AdminRooms/>}/>
           <Route path="/cusAdmin" element={<AdminCustomersPage/>}/>
+          <Route path="/invoiceAdmin" element={<AdminInvoice/>}/>
         </Routes>
       </Router>
 
