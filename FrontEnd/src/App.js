@@ -13,6 +13,7 @@ import Register from './Pages/register';
 import AdminDashboard from './Pages/admin';
 import AdminFoods from './Pages/adminFoods';
 import AdminRooms from './Pages/adminRooms';
+import AdminCustomersPage from './Pages/adminCustomers';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/AdminDash" element={<AdminDashboard/>}/>
           <Route path="/foodsAdmin" element={<AdminFoods/>}/>
           <Route path="/roomsAdmin" element={<AdminRooms/>}/>
+          <Route path="/cusAdmin" element={<AdminCustomersPage/>}/>
         </Routes>
       </Router>
 

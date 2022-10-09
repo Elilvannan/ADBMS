@@ -68,8 +68,4 @@ public class UsersImpl implements UsersServ{
 		return "Added to cart";
 	}
 
-
-	
-	
-
 }

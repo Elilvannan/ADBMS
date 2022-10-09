@@ -72,5 +72,9 @@ public class MyController {
 		return usersServ.getAllCartItems();
 	}
 	
+	@GetMapping("/getCustomers")
+	public List<Customer> getAllCustomers(){
+		return usersServ.getAllCus();
+	}
 	
 }
