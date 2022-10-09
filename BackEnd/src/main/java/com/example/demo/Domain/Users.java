@@ -26,6 +26,19 @@ public class Users {
 
 	@Column(name="cus_id")
 	private int cid;
+
+	public Users() {
+	}
+
+	public Users(String name, String password, String post, int cid) {
+		this.name = name;
+		this.password = password;
+		this.post = post;
+		this.cid = cid;
+	}
+
+	
+
 	
 	public int getId() {
 		return id;

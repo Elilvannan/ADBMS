@@ -1,16 +1,17 @@
 package com.example.demo.Controller;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.smartcardio.Card;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Domain.Cart;
@@ -18,6 +19,7 @@ import com.example.demo.Domain.Customer;
 import com.example.demo.Domain.Foods;
 import com.example.demo.Domain.Users;
 import com.example.demo.Repositories.CustomerRepo;
+import com.example.demo.Repositories.UsersRepo;
 import com.example.demo.Service.UsersServ;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -27,18 +29,18 @@ public class MyController {
 	private UsersServ usersServ;
 
 	@Autowired
-	private CustomerRepo customerRepo;
+	UsersRepo repo;
 
 	@RequestMapping("/")
 	public String index() {
 		return "Hello MNH";
 	}
-	
-	@GetMapping("/checkLogin")
-	public List<Users> allUsers() {
-		return usersServ.getAllUsers();
+
+	@GetMapping("/getByUser/{user}")
+	public List<Users> getByUser(@PathVariable("user") String user){
+		return (List<Users>)usersServ.getDetailByUser(user);
 	}
-	
+
 	@GetMapping("/getFoods")
 	public List<Foods> allFoods() {
 		return usersServ.getAllFoods();
