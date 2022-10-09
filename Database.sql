@@ -116,7 +116,12 @@ BEGIN
 END$
 DELIMITER 
 
-
+CREATE VIEW FOOD_ORDERS_VIEW
+AS
+SELECT c.cus_name, f.food_name
+FROM ((food f
+INNER JOIN food_orders fo ON f.food_id = fo.food_id)
+INNER JOIN customer c ON c.cus_id = fo.cus_id);
 
 
 
