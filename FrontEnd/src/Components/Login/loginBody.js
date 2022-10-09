@@ -15,7 +15,7 @@ const LoginBody = () => {
     const nav = useNavigate();
 
     const loginHandler = (e) => {
-        Axios.get('http://localhost:8080/checkLogin').then((response) => {
+        Axios.get(`http://localhost:8080/getByUser/${userName}`).then((response) => {
             setUserDetails(response.data);
         });
         userDetails.map((val)=>{

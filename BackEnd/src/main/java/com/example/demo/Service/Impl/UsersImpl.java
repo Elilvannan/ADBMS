@@ -30,10 +30,9 @@ public class UsersImpl implements UsersServ{
 	@Autowired
 	private CartRepo cartRepo;
 	
-
 	@Override
-	public List<Users> getAllUsers() {
-		return usersRepo.findAll();
+	public List<Users> getDetailByUser(String name) {
+		return usersRepo.getAllU(name);
 	}
 
 	@Override
@@ -68,6 +67,7 @@ public class UsersImpl implements UsersServ{
 		cartRepo.save(cart);
 		return "Added to cart";
 	}
+
 
 	
 	
