@@ -59,7 +59,7 @@ public class MyController {
 		return usersServ.getAllInvoice();
 	}
 
-	@PostMapping("/addCus")
+	@PostMapping("/addCustomer")
 	public String addCustomer(@RequestBody Customer cus){
 		return usersServ.AddNewCus(cus);
 		
@@ -110,5 +110,6 @@ public class MyController {
 	public String addEmployee(@RequestBody Employee employee){
 		return usersServ.AddNewEmployee(employee);
 	}
+
 	
 }
