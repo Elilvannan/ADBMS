@@ -115,16 +115,7 @@ DELIMITER $
 BEGIN
 	SELECT DISTINCT(f.food_name), f.food_id  FROM cart as c,food as f where c.cus_id = ID ;
 END$
-DELIMITER;
-
--- get all users
-DELIMITER $
-CREATE PROCEDURE Get_ALL_Users()
-BEGIN
-	select user_id,user_name,post from Users where post NOT LIKE 'admin';
-END$
-DELIMITER ;
-
+DELIMITER 
 
 CREATE VIEW FOOD_ORDERS_VIEW
 AS
@@ -250,5 +241,12 @@ END$
 DELIMITER ;
 
 call View_Allocated_Room
+
+DELIMITER $
+ CREATE PROCEDURE View_Food_Details_ByCategory(IN Category VARCHAR(255))
+BEGIN
+	select food_desc,food_image,food_name,food_price from food where food_category=Category;
+END$
+DELIMITER $
 
 
