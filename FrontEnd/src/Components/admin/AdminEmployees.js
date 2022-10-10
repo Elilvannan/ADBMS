@@ -131,7 +131,7 @@ const AdminEmployeesList = () => {
                                 />
                             </Form.Group>
                             <div className='row'>
-                                <div className='col-md-6'>
+                                
                                     <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
                                         <Form.Label>Employee Age</Form.Label>
                                         <Form.Control
@@ -143,10 +143,10 @@ const AdminEmployeesList = () => {
                                             }}
                                         />
                                     </Form.Group>
-                                </div>
+                                
                             </div>
                                 <div className='row'>
-                                <div className='col-md-6'>
+                                
                                     <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
                                         <Form.Label>Employee Gender</Form.Label>
                                         <Form.Control
@@ -158,11 +158,11 @@ const AdminEmployeesList = () => {
                                             }}
                                         />
                                     </Form.Group>
-                                </div>
+                                
                             </div>
 
                             <div className='row'>
-                                <div className='col-md-6'>
+                                
                                     <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
                                         <Form.Label>Employee Position</Form.Label>
                                         <Form.Control
@@ -174,11 +174,11 @@ const AdminEmployeesList = () => {
                                             }}
                                         />
                                     </Form.Group>
-                                </div>
+                               
                             </div>
 
                             <div className='row'>
-                                <div className='col-md-6'>
+                                
                                     <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
                                         <Form.Label>Employee Address</Form.Label>
                                         <Form.Control
@@ -190,7 +190,7 @@ const AdminEmployeesList = () => {
                                             }}
                                         />
                                     </Form.Group>
-                                </div>
+                                
                             </div>
 
                             
