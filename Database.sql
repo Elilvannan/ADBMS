@@ -74,6 +74,8 @@ create table cart(
 item_id int primary key,
 food_id int,
 cus_id int,
+price float,
+quantity int,
 foreign key(cus_id) references customer(cus_id),
 foreign key(food_id) references food(food_id)
 );
