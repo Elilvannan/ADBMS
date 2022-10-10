@@ -34,6 +34,9 @@ public class UsersImpl implements UsersServ{
 
 	@Autowired
 	private InvoiceRepo invoiceRepo;
+
+	@Autowired
+    private EmployeeRepo employeeRepo;
 	
 	@Override
 	public List<Users> getDetailByUser(String name) {
@@ -77,5 +80,12 @@ public class UsersImpl implements UsersServ{
 	public List<Invoice> getAllInvoice() {
 		return invoiceRepo.findAll();
 	}
+
+	@Override
+    public List<Employee> getAllEmp() {
+        return employeeRepo.findAll();
+    }
+
+
 
 }

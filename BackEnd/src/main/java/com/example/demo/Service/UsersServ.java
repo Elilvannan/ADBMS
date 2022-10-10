@@ -26,4 +26,6 @@ public interface UsersServ{
 
 	public List<Invoice> getAllInvoice();
 
+	public List<Employee> getAllEmp();
+
 }

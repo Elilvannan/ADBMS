@@ -82,5 +82,11 @@ public class MyController {
 	public List<Customer> getAllCustomers(){
 		return usersServ.getAllCus();
 	}
+
+	@GetMapping("/getEmployees")
+    public List<Employee> getAllEmp(){
+        return usersServ.getAllEmp();
+    }
+
 	
 }
