@@ -172,7 +172,11 @@ END; //
 DELIMITER ; 
 
 
-
+-- views
+--  View_Cart_Total_Price
+create view View_Cart_Total_Price as 
+select f.food_name,price,quantity,(price*quantity) as total from food f,cart c where f.food_id=c.food_id ;
+ 
 
 
     
