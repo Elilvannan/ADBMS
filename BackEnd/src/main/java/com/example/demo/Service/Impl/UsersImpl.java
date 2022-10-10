@@ -113,8 +113,13 @@ public class UsersImpl implements UsersServ{
 
 	@Override
 	public List<Object[]> bookedRooms() {
-		// TODO Auto-generated method stub
 		return roomRepo.getRoomDetails();
+	}
+
+	@Override
+	public String AddNewEmployee(Employee employee) {
+		employeeRepo.save(employee);
+		return "Employee added";
 	}
 
 }
