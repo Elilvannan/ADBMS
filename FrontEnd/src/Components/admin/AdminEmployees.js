@@ -43,6 +43,15 @@ const columns = [
     }
 ];
 
+const [empName, setEmpName] = useState('');
+const [empAge, setEmpAge] = useState('');
+const [empGender, setEmpGender] = useState('');
+const [empPosition, setEmpPosition] = useState('');
+const [empAddress, setEmpAddress] = useState('');
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+
 const AdminEmployeesList = () => {
     const addNewEmp = (e) => {
         (async () => {
@@ -58,7 +67,7 @@ const AdminEmployeesList = () => {
                         "emp_age": empAge,
                         "emp_gender": empGender,
                         "emp_position": empPosition,
-                        "emp_address": empPosition
+                        "emp_address": empAddress
                     }
                 )
             });
@@ -68,15 +77,6 @@ const AdminEmployeesList = () => {
 
     };
 
-
-    const [empName, setEmpName] = useState('');
-    const [empAge, setEmpAge] = useState('');
-    const [empGender, setEmpGender] = useState('');
-    const [empPosition, setEmpPosition] = useState('');
-    const [empAddress, setEmpAddress] = useState('');
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     const [show, setShow] = useState(false);
     const [employees, setEmployees] = useState([]);
@@ -129,69 +129,69 @@ const AdminEmployeesList = () => {
                                 />
                             </Form.Group>
                             <div className='row'>
-                                
-                                    <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
-                                        <Form.Label>Employee Age</Form.Label>
-                                        <Form.Control
-                                            type="number"
-                                            placeholder="Enter Employee Age"
-                                            name="employee"
-                                            onChange={(e) => {
-                                                setEmpAge(e.target.value)
-                                            }}
-                                        />
-                                    </Form.Group>
-                                
+
+                                <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
+                                    <Form.Label>Employee Age</Form.Label>
+                                    <Form.Control
+                                        type="number"
+                                        placeholder="Enter Employee Age"
+                                        name="employee"
+                                        onChange={(e) => {
+                                            setEmpAge(e.target.value)
+                                        }}
+                                    />
+                                </Form.Group>
+
                             </div>
-                                <div className='row'>
-                                
-                                    <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
-                                        <Form.Label>Employee Gender</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Enter Employee Gender"
-                                            name="employee"
-                                            onChange={(e) => {
-                                                setEmpGender(e.target.value)
-                                            }}
-                                        />
-                                    </Form.Group>
-                                
+                            <div className='row'>
+
+                                <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
+                                    <Form.Label>Employee Gender</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        placeholder="Enter Employee Gender"
+                                        name="employee"
+                                        onChange={(e) => {
+                                            setEmpGender(e.target.value)
+                                        }}
+                                    />
+                                </Form.Group>
+
                             </div>
 
                             <div className='row'>
-                                
-                                    <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
-                                        <Form.Label>Employee Position</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Enter Employee Position"
-                                            name="employee"
-                                            onChange={(e) => {
-                                                setEmpPosition(e.target.value)
-                                            }}
-                                        />
-                                    </Form.Group>
-                               
+
+                                <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
+                                    <Form.Label>Employee Position</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        placeholder="Enter Employee Position"
+                                        name="employee"
+                                        onChange={(e) => {
+                                            setEmpPosition(e.target.value)
+                                        }}
+                                    />
+                                </Form.Group>
+
                             </div>
 
                             <div className='row'>
-                                
-                                    <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
-                                        <Form.Label>Employee Address</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Enter Employee Address"
-                                            name="employee"
-                                            onChange={(e) => {
-                                                setEmpAddress(e.target.value)
-                                            }}
-                                        />
-                                    </Form.Group>
-                                
+
+                                <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
+                                    <Form.Label>Employee Address</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        placeholder="Enter Employee Address"
+                                        name="employee"
+                                        onChange={(e) => {
+                                            setEmpAddress(e.target.value)
+                                        }}
+                                    />
+                                </Form.Group>
+
                             </div>
 
-                            
+
                             <div className='row'>
                                 <div className='col-md-12 mb-3 d-flex flex-row align-items-end'>
                                     <Button variant="danger" className='mx-2' type="reset">

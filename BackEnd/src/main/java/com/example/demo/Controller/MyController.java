@@ -105,5 +105,10 @@ public class MyController {
 		return usersServ.bookedRooms();
 
 	}
+
+	@PostMapping("/addEmployee")
+	public String addEmployee(@RequestBody Employee employee){
+		return usersServ.AddNewEmployee(employee);
+	}
 	
 }
