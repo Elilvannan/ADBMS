@@ -17,7 +17,7 @@ const RegiBody = () => {
 
     const registerHandler = (e) => {
         (async () => {
-            await fetch('http://localhost:8080/addCus', {
+            await fetch('http://localhost:8080/addCustomer', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -35,10 +35,10 @@ const RegiBody = () => {
                     }
                 )
             });
-            alert("User Created");
+            
         })();
-
-
+        alert("User Created");
+        window.location.reload();
     }
     return (
         <div className='row '>

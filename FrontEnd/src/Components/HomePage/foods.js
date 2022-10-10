@@ -21,14 +21,13 @@ const FoodsList = () => {
         });
     }, []);
     let navigate = useNavigate();
-    const addToCart = (e, quan,price) => {
-        let totalPrice = quan*price;
+    const addToCart = (e, quan, price) => {
+        let totalPrice = quan * price;
         console.log(totalPrice);
         if (user == null) {
             let path = `/login`;
             navigate(path);
         } else {
-            alert(user);
             (async () => {
                 await fetch('http://localhost:8080/addToCart', {
                     method: 'POST',
@@ -38,14 +37,15 @@ const FoodsList = () => {
                     },
                     body: JSON.stringify(
                         {
-                                "food_id":quan,
-                                "cus_id":theId,
-                                "quantity":quantity,
-                                "price":totalPrice
+                            "food_id": quan,
+                            "cus_id": theId,
+                            "quantity": quantity,
+                            "price": totalPrice
                         }
                     )
                 });
                 alert("Added to cart");
+                window.location.reload();
             })();
         }
 
@@ -102,7 +102,7 @@ const FoodsList = () => {
                 </div>
             </div>
 
-           
+
 
         </>
     )

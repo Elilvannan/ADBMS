@@ -47,7 +47,6 @@ const TopNav = () => {
         console.log(id);
         setShow(true);
         Axios.get('http://localhost:8080/getCart/{id}').then((response) => {
-
             setCartDetails(response.data);
         });
     }

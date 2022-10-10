@@ -81,7 +81,7 @@ public class MyController {
 		return usersServ.AddToCart(cart);
 	}
 
-	@GetMapping("/getCart")
+	@GetMapping("/getCart/{id}")
 	public List<Cart> getAllCart(){
 		return usersServ.getAllCartItems();
 	}
@@ -100,17 +100,18 @@ public class MyController {
 	public List<Object[]> getTest(){
 		return usersServ.getTestView();
 	}
+	@GetMapping("/getRooms")
+	public List<Object[]> getBookedRooms(){
+		return usersServ.bookedRooms();
+
+	}
 
 	@GetMapping("/testProcedure/{id}")
 	public List<Object[]> getProc(@PathVariable("id") Integer id){
 		return usersServ.getTestProc(id);
 	}
 
-	@GetMapping("/getRooms")
-	public List<Object[]> getBookedRooms(){
-		return usersServ.bookedRooms();
 
-	}
 
 	@GetMapping("/emptyRooms")
 	public List<Object[]> getEmptyRooms(){
@@ -132,7 +133,7 @@ public class MyController {
 		return usersServ.getOrdersDetail(id);
 	}
 
-	@RequestMapping("/deleteFood/{id}")
+	@DeleteMapping("/deleteFood/{id}")
 	public void deleteFoodSelected(@PathVariable("id") Integer id){
 		usersServ.deleteFood(id);
 

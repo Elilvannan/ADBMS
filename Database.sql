@@ -21,7 +21,6 @@ post varchar(60),
 cus_id int
 );
 
-
 /* Trigger to add new user account when customer register for the system */
 DELIMITER //
 create trigger createUserAccount
@@ -257,7 +256,7 @@ DELIMITER $
 BEGIN
 	select food_desc,food_image,food_name,food_price from food where food_category=Category;
 END$
-DELIMITER $
+DELIMITER ;
 
 DELIMITER $
 CREATE PROCEDURE View_Ordereditem_byID(IN id int)
