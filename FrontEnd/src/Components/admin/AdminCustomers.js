@@ -7,29 +7,29 @@ import * as Icon from 'react-bootstrap-icons';
 
 const columns = [
   {
-      name: 'NO',
-      selector: row => row.id,
-      sortable: true,
+    name: 'NO',
+    selector: row => row.id,
+    sortable: true,
   },
   {
-      name: 'NAME',
-      selector: row => row.cus_name,
-      sortable: true,
+    name: 'NAME',
+    selector: row => row.cus_name,
+    sortable: true,
   },
   {
-      name: 'PHONE',
-      selector: row => row.phone,
-      sortable: true,
+    name: 'PHONE',
+    selector: row => row.phone,
+    sortable: true,
   },
   {
-      name: 'ADDRESS',
-      selector: row => row.address,
-      sortable: true,
+    name: 'ADDRESS',
+    selector: row => row.address,
+    sortable: true,
   },
   {
-      name: 'EMAIL',
-      selector: row => row.email,
-      sortable: true,
+    name: 'EMAIL',
+    selector: row => row.email,
+    sortable: true,
   },
   {
     name: 'NIC',
@@ -54,35 +54,35 @@ const AdminCustomers = () => {
 
   useEffect(() => {
     Axios.get('http://localhost:8080/getCustomers').then((response) => {
-          setCustomers(response.data);
-        });
-    }, []);
+      setCustomers(response.data);
+    });
+  }, []);
   return (
     <>
-    <div className='container'>
-            <div className='row'>
-                <h2>CUSTOMERS</h2>
-            </div>
-            <DataTable
-                columns={columns}
-                data={customers}
-                selectableRows
-                selectableRowsHighlight
-                pagination
-                fixedHeader
-                fixedHeaderScrollHeight='70vh'
-                highlightOnHover
-
-            />
-
-            <Icon.PlusCircle
-                
-                className="addButton d-flex content-align-end"
-                size={35}
-                color="green"
-            />
-
+      <div className='container'>
+        <div className='row'>
+          <h2>CUSTOMERS</h2>
         </div>
+        <DataTable
+          columns={columns}
+          data={customers}
+          selectableRows
+          selectableRowsHighlight
+          pagination
+          fixedHeader
+          fixedHeaderScrollHeight='70vh'
+          highlightOnHover
+
+        />
+
+        <Icon.PlusCircle
+
+          className="addButton d-flex content-align-end"
+          size={35}
+          color="green"
+        />
+
+      </div>
 
     </>
   )

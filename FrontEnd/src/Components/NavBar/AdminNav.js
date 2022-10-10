@@ -55,6 +55,11 @@ const AdminNav = () => {
                                     </Nav.Link>
                                     <Nav.Link href="#" className='linksFor text-center my-1 p-3'>
                                         <NavLink>
+                                            <Link to="/employeeAdmin" className='theLink'>EMPLOYEES</Link>
+                                        </NavLink>
+                                    </Nav.Link>
+                                    <Nav.Link href="#" className='linksFor text-center my-1 p-3'>
+                                        <NavLink>
                                             <Link to="/" onClick={logOut} className='theLink'>LOGOUT</Link>
                                         </NavLink>
                                     </Nav.Link>
