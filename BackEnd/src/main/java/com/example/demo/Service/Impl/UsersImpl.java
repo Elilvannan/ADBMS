@@ -124,8 +124,7 @@ public class UsersImpl implements UsersServ{
 
 	@Override
 	public List<Object[]> getEmptyRoomList() {
-		
-		return roomRepo.getEmptyRooms();
+		return roomRepo.getEmptyRoomProc();
 	}
 
 }
