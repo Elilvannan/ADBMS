@@ -3,6 +3,7 @@ package com.example.demo.Service;
 import java.util.List;
 
 import com.example.demo.Domain.Cart;
+import com.example.demo.Domain.Cart_Items;
 import com.example.demo.Domain.Customer;
 import com.example.demo.Domain.Employee;
 import com.example.demo.Domain.Foods;
@@ -28,5 +29,11 @@ public interface UsersServ{
 	public List<Invoice> getAllInvoice();
 
 	public List<Employee> getAllEmp();
+
+	public List<Customer> getAllCustomerView();
+
+	public List<Object[]> getTestView();
+
+	public List<Object[]> getTestProc(Integer id);
 
 }

@@ -2,10 +2,13 @@ package com.example.demo.Service.Impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Domain.Cart;
+import com.example.demo.Domain.Cart_Items;
 import com.example.demo.Domain.Customer;
 import com.example.demo.Domain.Employee;
 import com.example.demo.Domain.Foods;
@@ -20,6 +23,7 @@ import com.example.demo.Repositories.UsersRepo;
 import com.example.demo.Service.UsersServ;
 
 @Service
+@Transactional
 public class UsersImpl implements UsersServ{
 	
 	@Autowired
@@ -88,6 +92,21 @@ public class UsersImpl implements UsersServ{
         return employeeRepo.findAll();
     }
 
+	@Override
+	public List<Customer> getAllCustomerView() {
+		return customerRepo.findAll();
+	}
 
+	@Override
+	public List<Object[]> getTestView() {
+		// TODO Auto-generated method stub
+		return customerRepo.getTestViewData();
+	}
+
+	@Override
+	public List<Object[]> getTestProc(Integer id) {
+		// TODO Auto-generated method stub
+		return cartRepo.getCartItems(id);
+	}
 
 }

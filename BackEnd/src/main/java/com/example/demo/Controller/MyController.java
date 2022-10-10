@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Domain.Cart;
+import com.example.demo.Domain.Cart_Items;
 import com.example.demo.Domain.Customer;
 import com.example.demo.Domain.Employee;
 import com.example.demo.Domain.Foods;
@@ -50,7 +51,7 @@ public class MyController {
 	
 	@GetMapping("/getCus")
 	public List<Customer> registerCus(){
-		return usersServ.getAllCus();
+		return usersServ.getAllCustomerView();
 	}
 
 	@GetMapping("/getInvoices")
@@ -78,7 +79,7 @@ public class MyController {
 	public List<Cart> getAllCart(){
 		return usersServ.getAllCartItems();
 	}
-	
+
 	@GetMapping("/getCustomers")
 	public List<Customer> getAllCustomers(){
 		return usersServ.getAllCus();
@@ -88,6 +89,17 @@ public class MyController {
     public List<Employee> getAllEmp(){
         return usersServ.getAllEmp();
     }
+
+	@GetMapping("/testView")
+	public List<Object[]> getTest(){
+		return usersServ.getTestView();
+	}
+
+	@GetMapping("/testProcedure/{id}")
+	public List<Object[]> getProc(@PathVariable("id") Integer id){
+		return usersServ.getTestProc(id);
+	}
+
 
 	
 }
