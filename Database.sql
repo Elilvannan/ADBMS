@@ -177,6 +177,39 @@ create view View_Cart_Total_Price as
 select f.food_name,price,quantity,(price*quantity) as total from food f,cart c where f.food_id=c.food_id ;
  
 
+-- View_Room_Details
+DELIMITER $
+ CREATE PROCEDURE View_Food_Details(IN F_ID INT)
+BEGIN
+	select * from food where food_id=F_ID;
+END$
+DELIMITER $
+
+call View_Food_Details(16)
+
+-- get room details weather booked or not
+DELIMITER //
+CREATE FUNCTION getRoomStatus(ID int)
+RETURNS VARCHAR(50)
+BEGIN
+   DECLARE room_status VARCHAR(50);
+   DECLARE st int;
+   
+	SELECT Booking_status into st from room;
+    if st > 0 then 
+		set room_status = "Booked";
+    else
+		set room_status = "Not Booked";
+    end if;
+    RETURN room_status;
+END//
+DELIMITER ; 
+
+-- view to show booked rooms including the customer
+create view room_details
+AS
+select c.cus_name, getRoomStatus(r.room_id),r.room_description from room r inner join customer c on c.cus_id = r.cus_id ;
+
 
     
 
