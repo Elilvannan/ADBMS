@@ -139,7 +139,7 @@ BEGIN
 select * from room where
 Booking_status =0;
 END$
-DELIMITER $
+DELIMITER ;
 
 call View_Empty_Room
 
