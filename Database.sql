@@ -124,7 +124,10 @@ INNER JOIN food_orders fo ON f.food_id = fo.food_id)
 INNER JOIN customer c ON c.cus_id = fo.cus_id);
 
 
+<<<<<<< Updated upstream
 -- procedure
+=======
+>>>>>>> Stashed changes
 DELIMITER $
  CREATE PROCEDURE View_Add_To_Cart_Items(IN ID INT)
 BEGIN
