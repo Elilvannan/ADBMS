@@ -48,6 +48,8 @@ public interface UsersServ{
 
     public List<Object[]> getOrdersDetail(Integer id);
 
+    public List<Object[]> getallocatedRoomsList();
+
 	
 }
 

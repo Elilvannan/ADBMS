@@ -15,4 +15,8 @@ public interface RoomRepo extends JpaRepository<Room, Integer>{
     @Query(value="select * from room_details", nativeQuery = true)
     List<Object[]> getRoomDetails();
 
+    @Query(value="call View_Allocated_Room", nativeQuery = true)
+    List<Object[]> getAllocatedRoomView();
+
+
 }

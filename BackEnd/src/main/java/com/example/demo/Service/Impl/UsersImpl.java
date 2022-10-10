@@ -143,4 +143,10 @@ public class UsersImpl implements UsersServ{
 		return customerRepo.getOrderitems(id);
 	}
 
+	@Override
+	public List<Object[]> getallocatedRoomsList() {
+		return roomRepo.getAllocatedRoomView();
+	}
+
+	
 }

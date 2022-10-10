@@ -116,6 +116,7 @@ public class MyController {
 	public List<Object[]> getEmptyRooms(){
 		return usersServ.getEmptyRoomList();
 	}
+
 	@PostMapping("/addEmployee")
 	public String addEmployee(@RequestBody Employee employee){
 		return usersServ.AddNewEmployee(employee);
@@ -129,6 +130,11 @@ public class MyController {
 	@GetMapping("/getOrders/{id}")
 	public List<Object[]> getOrdersDEtails(@PathVariable("id") Integer id){
 		return usersServ.getOrdersDetail(id);
+	}
+
+	@GetMapping("/allocatedRooms")
+	public List<Object[]> getallocatedRooms(){
+		return usersServ.getallocatedRoomsList();
 	}
 
 	
