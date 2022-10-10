@@ -38,4 +38,6 @@ public interface UsersServ{
 
 	public List<Object[]> bookedRooms();
 
+    public String AddNewEmployee(Employee employee);
+
 }

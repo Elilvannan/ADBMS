@@ -55,7 +55,7 @@ const handleShow = () => setShow(true);
 const AdminEmployeesList = () => {
     const addNewEmp = (e) => {
         (async () => {
-            await fetch('http://localhost:8080/', {
+            await fetch('http://localhost:8080/addEmployee', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
