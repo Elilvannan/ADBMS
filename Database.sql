@@ -163,7 +163,8 @@ DELIMITER ;
 DELIMITER $
  CREATE PROCEDURE View_Allocated_Room_Customer_Details(IN R_ID INT)
 BEGIN
-	select c.cus_name,c.cus_phone,c.cus_address,c.cus_email,c.cus_nic from room r,customer c where r.room_id=R_ID and c.cus_id=r.cus_id ;
+	select c.cus_name,c.cus_phone,c.cus_address,c.cus_email,c.cus_nic from
+    room r,customer c where r.room_id=R_ID and c.cus_id=r.cus_id ;
 END$
 DELIMITER ;
 
@@ -217,14 +218,16 @@ DELIMITER ;
 -- view to show booked rooms including the customer
 create view room_details
 AS
-select c.cus_name, getRoomStatus(r.room_id),r.room_description from room r inner join customer c on c.cus_id = r.cus_id ;
+select c.cus_name, getRoomStatus(r.room_id),r.room_description from 
+room r inner join customer c on c.cus_id = r.cus_id ;
 
 
 -- Get_order_details (output customer name, food_name)
 DELIMITER $
 CREATE PROCEDURE Get_order_details(IN ID INT)
 BEGIN
-	select fo.order_id,c.cus_name,f.food_name from customer c,food_orders fo,food f where fo.order_id =ID and c.cus_id=fo.cus_id and fo.food_id=f.food_id;
+	select fo.order_id,c.cus_name,f.food_name from customer c,food_orders fo,food f where fo.order_id =ID
+    and c.cus_id=fo.cus_id and fo.food_id=f.food_id;
 END$
 DELIMITER $
     
@@ -236,3 +239,16 @@ END$
 DELIMITER $
 
 call Get_Invoice_Id('2022-10-09')
+
+DELIMITER $
+CREATE PROCEDURE
+View_Allocated_Room()
+BEGIN
+select * from room where
+Booking_status =1;
+END$
+DELIMITER ;
+
+call View_Allocated_Room
+
+
