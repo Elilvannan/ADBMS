@@ -27,11 +27,6 @@ const columns = [
         sortable: true,
     },
     {
-        name: 'DOJ',
-        selector: row => row.emp_doj,
-        sortable: true,
-    },
-    {
         name: 'POSITION',
         selector: row => row.emp_position,
         sortable: true,
