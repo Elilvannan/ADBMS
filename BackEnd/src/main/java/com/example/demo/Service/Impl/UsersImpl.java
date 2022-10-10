@@ -148,5 +148,9 @@ public class UsersImpl implements UsersServ{
 		return roomRepo.getAllocatedRoomView();
 	}
 
+	@Override
+	public List<Object[]> getFoodDetails(String category) {
+		return foodsRepo.getFoodDetailsBycategory(category);
+	}
 	
 }

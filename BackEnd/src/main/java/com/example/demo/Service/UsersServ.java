@@ -50,6 +50,8 @@ public interface UsersServ{
 
     public List<Object[]> getallocatedRoomsList();
 
+	public List<Object[]> getFoodDetails(String category);
+
 	
 }
 
