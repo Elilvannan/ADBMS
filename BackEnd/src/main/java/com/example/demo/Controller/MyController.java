@@ -100,6 +100,10 @@ public class MyController {
 		return usersServ.getTestProc(id);
 	}
 
+	@GetMapping("/getRooms")
+	public List<Object[]> getBookedRooms(){
+		return usersServ.bookedRooms();
 
+	}
 	
 }

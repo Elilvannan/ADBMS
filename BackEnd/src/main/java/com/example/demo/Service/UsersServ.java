@@ -12,7 +12,7 @@ import com.example.demo.Domain.Users;
 
 public interface UsersServ{
 
-	public List<Users> getDetailByUser(String name);
+    public List<Users> getDetailByUser(String name);
 	
 	public List<Foods> getAllFoods();	
 
@@ -35,5 +35,7 @@ public interface UsersServ{
 	public List<Object[]> getTestView();
 
 	public List<Object[]> getTestProc(Integer id);
+
+	public List<Object[]> bookedRooms();
 
 }
