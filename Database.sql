@@ -124,7 +124,13 @@ INNER JOIN food_orders fo ON f.food_id = fo.food_id)
 INNER JOIN customer c ON c.cus_id = fo.cus_id);
 
 
-
+-- procedure
+DELIMITER $
+ CREATE PROCEDURE View_Add_To_Cart_Items(IN ID INT)
+BEGIN
+	SELECT DISTINCT(f.food_name), f.food_id  FROM cart as c,food as f where c.cus_id = ID ;
+END$
+DELIMITER 
 
 
 
