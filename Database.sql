@@ -177,6 +177,15 @@ create view View_Cart_Total_Price as
 select f.food_name,price,quantity,(price*quantity) as total from food f,cart c where f.food_id=c.food_id ;
  
 
+-- View_Room_Details
+DELIMITER $
+ CREATE PROCEDURE View_Food_Details(IN F_ID INT)
+BEGIN
+	select * from food where food_id=F_ID;
+END$
+DELIMITER $
+
+call View_Food_Details(16)
 
     
 
