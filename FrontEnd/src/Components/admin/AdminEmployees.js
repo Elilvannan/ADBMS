@@ -43,16 +43,17 @@ const columns = [
     }
 ];
 
-const [empName, setEmpName] = useState('');
-const [empAge, setEmpAge] = useState('');
-const [empGender, setEmpGender] = useState('');
-const [empPosition, setEmpPosition] = useState('');
-const [empAddress, setEmpAddress] = useState('');
 
-const handleClose = () => setShow(false);
-const handleShow = () => setShow(true);
 
 const AdminEmployeesList = () => {
+    const [empName, setEmpName] = useState('');
+    const [empAge, setEmpAge] = useState('');
+    const [empGender, setEmpGender] = useState('');
+    const [empPosition, setEmpPosition] = useState('');
+    const [empAddress, setEmpAddress] = useState('');
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const addNewEmp = (e) => {
         (async () => {
             await fetch('http://localhost:8080/addEmployee', {
