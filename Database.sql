@@ -142,14 +142,14 @@ CREATE PROCEDURE View_Room_Details(IN R_ID INT)
 BEGIN
 	select * from room where room_id=R_ID;
 END$
-DELIMITER $
+DELIMITER ;
 
 DELIMITER $
  CREATE PROCEDURE View_Allocated_Room_Customer_Details(IN R_ID INT)
 BEGIN
 	select c.cus_name,c.cus_phone,c.cus_address,c.cus_email,c.cus_nic from room r,customer c where r.room_id=R_ID and c.cus_id=r.cus_id ;
 END$
-DELIMITER $
+DELIMITER ;
 
 
 
