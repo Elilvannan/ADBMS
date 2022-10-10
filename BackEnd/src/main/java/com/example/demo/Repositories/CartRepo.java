@@ -16,7 +16,7 @@ import com.example.demo.Domain.Cart_Items;
 @Repository
 public interface CartRepo extends JpaRepository<Cart,Integer>{
 
-    @Query(value="CALL View_Add_To_Cart_Items(19)", nativeQuery = true)
+    @Query(value="CALL View_Add_To_Cart_Items(:id)", nativeQuery = true)
     List<Object[]> getCartItems(Integer id);
 
 }
