@@ -135,7 +135,16 @@ BEGIN
 END$
 DELIMITER 
 
+DELIMITER $
+CREATE PROCEDURE
+View_Empty_Room()
+BEGIN
+select * from room where
+Booking_status =0;
+END$
+DELIMITER $
 
+call View_Empty_Room
 
 
 
