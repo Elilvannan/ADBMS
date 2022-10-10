@@ -81,7 +81,7 @@ public class MyController {
 	}
 
 	@GetMapping("/getCustomers")
-	public List<Customer> getAllCustomers(){
+	public List<Object[]> getAllCustomers(){
 		return usersServ.getAllCus();
 	}
 

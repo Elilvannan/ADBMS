@@ -18,7 +18,7 @@ public interface UsersServ{
 
     public String AddNewCus(Customer cus);
 
-	public  List<Customer> getAllCus();
+	public  List<Object[]> getAllCus();
 
 	public List<Cart> getAllCartItems();
 

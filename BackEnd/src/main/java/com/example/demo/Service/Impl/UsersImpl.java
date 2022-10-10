@@ -61,8 +61,8 @@ public class UsersImpl implements UsersServ{
 	}
 
 	@Override
-	public List<Customer> getAllCus() {
-		return customerRepo.findAll();
+	public List<Object[]> getAllCus() {
+		return customerRepo.findCustomer();
 	}
 
 	@Override
@@ -99,13 +99,11 @@ public class UsersImpl implements UsersServ{
 
 	@Override
 	public List<Object[]> getTestView() {
-		// TODO Auto-generated method stub
 		return customerRepo.getTestViewData();
 	}
 
 	@Override
 	public List<Object[]> getTestProc(Integer id) {
-		// TODO Auto-generated method stub
 		return cartRepo.getCartItems(id);
 	}
 

@@ -7,43 +7,38 @@ import * as Icon from 'react-bootstrap-icons';
 
 const columns = [
   {
-    name: 'NO',
-    selector: row => row.id,
-    sortable: true,
-  },
-  {
     name: 'NAME',
-    selector: row => row.cus_name,
+    selector: row => row[0],
     sortable: true,
   },
   {
     name: 'PHONE',
-    selector: row => row.phone,
+    selector: row => row[1],
     sortable: true,
   },
   {
     name: 'ADDRESS',
-    selector: row => row.address,
+    selector: row => row[2],
     sortable: true,
   },
   {
     name: 'EMAIL',
-    selector: row => row.email,
+    selector: row => row[3],
     sortable: true,
   },
   {
     name: 'NIC',
-    selector: row => row.nic,
+    selector: row => row[4],
     sortable: true,
   },
   {
     name: 'GENDER',
-    selector: row => row.gender,
+    selector: row => row[5],
     sortable: true,
   },
   {
-    name: 'DOB',
-    selector: row => row.dob,
+    name: 'AGE',
+    selector: row => row[6],
     sortable: true,
   },
 ];
