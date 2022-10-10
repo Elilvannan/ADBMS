@@ -137,6 +137,11 @@ public class MyController {
 		return usersServ.getallocatedRoomsList();
 	}
 
+	@GetMapping("/getFoodItems/{category}")
+	public List<Object[]> getOrdersDEtails(@PathVariable("category") String category){
+		return usersServ.getFoodDetails(category);
+	}
+
 	
 	
 }
