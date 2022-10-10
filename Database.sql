@@ -205,5 +205,11 @@ BEGIN
 END//
 DELIMITER ; 
 
+-- view to show booked rooms including the customer
+create view room_details
+AS
+select c.cus_name, getRoomStatus(r.room_id),r.room_description from room r inner join customer c on c.cus_id = r.cus_id ;
+
+
     
 
