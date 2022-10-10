@@ -212,4 +212,11 @@ select c.cus_name, getRoomStatus(r.room_id),r.room_description from room r inner
 
 
     
+DELIMITER $
+CREATE PROCEDURE Get_Invoice_Id(IN DATE DATE)
+BEGIN
+	select c.cus_name,i.invoice_id,i.price from customer c,invoice i where invoice_date=DATE and c.cus_id=i.cus_id;
+END$
+DELIMITER $
 
+call Get_Invoice_Id('2022-10-09')
