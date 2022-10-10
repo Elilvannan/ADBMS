@@ -40,15 +40,15 @@ public interface UsersServ{
 
     public String AddNewEmployee(Employee employee);
 
-<<<<<<< Updated upstream
-	public List<Object[]> getEmptyRoomList();
-=======
     public List<Object[]> getAllUsersView();
 
 	public List<Object[]> getEmptyRoomList();
 
     public String deleteCustomer(Integer id);
->>>>>>> Stashed changes
+
+    public List<Object[]> getOrdersDetail(Integer id);
+
+	
 }
 
 

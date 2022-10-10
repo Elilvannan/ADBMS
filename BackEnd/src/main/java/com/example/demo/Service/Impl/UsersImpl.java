@@ -127,8 +127,6 @@ public class UsersImpl implements UsersServ{
 		return roomRepo.getEmptyRoomProc();
 	}
 
-<<<<<<< Updated upstream
-=======
 	@Override
 	public List<Object[]> getAllUsersView() {
 		return usersRepo.getUsersWithView();
@@ -140,5 +138,9 @@ public class UsersImpl implements UsersServ{
 		return "Deleted";
 	}
 
->>>>>>> Stashed changes
+	@Override
+	public List<Object[]> getOrdersDetail(Integer id) {
+		return customerRepo.getOrderitems(id);
+	}
+
 }

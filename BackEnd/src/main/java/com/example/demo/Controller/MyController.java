@@ -125,5 +125,12 @@ public class MyController {
 	public String deleteCustomer(@PathVariable Integer id){
 		return usersServ.deleteCustomer(id);
 	}
+
+	@GetMapping("/getOrders/{id}")
+	public List<Object[]> getOrdersDEtails(@PathVariable("id") Integer id){
+		return usersServ.getOrdersDetail(id);
+	}
+
+	
 	
 }
