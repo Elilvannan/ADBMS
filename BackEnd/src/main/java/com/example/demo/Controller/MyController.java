@@ -132,6 +132,12 @@ public class MyController {
 		return usersServ.getOrdersDetail(id);
 	}
 
+	@RequestMapping("/deleteFood/{id}")
+	public void deleteFoodSelected(@PathVariable("id") Integer id){
+		usersServ.deleteFood(id);
+
+	}
+
 	@GetMapping("/allocatedRooms")
 	public List<Object[]> getallocatedRooms(){
 		return usersServ.getallocatedRoomsList();

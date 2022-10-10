@@ -48,6 +48,8 @@ public interface UsersServ{
 
     public List<Object[]> getOrdersDetail(Integer id);
 
+    public void deleteFood(Integer id);
+
     public List<Object[]> getallocatedRoomsList();
 
 	public List<Object[]> getFoodDetails(String category);

@@ -229,6 +229,16 @@ BEGIN
 END$
 DELIMITER $
 
+-- procedure to delete a food
+
+DELIMITER $
+CREATE PROCEDURE Delete_Food_Details(IN F_ID INT)
+BEGIN
+	delete from cart where food_id=F_ID;	
+	delete from food where food_id=F_ID;
+END$
+DELIMITER ;
+
 call Get_Invoice_Id('2022-10-09')
 
 DELIMITER $

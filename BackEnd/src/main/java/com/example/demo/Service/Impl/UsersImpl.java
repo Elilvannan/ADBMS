@@ -144,6 +144,11 @@ public class UsersImpl implements UsersServ{
 	}
 
 	@Override
+	public void deleteFood(Integer id) {
+		foodsRepo.deleteFoodItem(id);
+	}
+
+	@Override
 	public List<Object[]> getallocatedRoomsList() {
 		return roomRepo.getAllocatedRoomView();
 	}
