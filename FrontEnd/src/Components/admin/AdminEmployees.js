@@ -56,14 +56,15 @@ const AdminEmployeesList = () => {
                 },
                 body: JSON.stringify(
                     {
-                        "food_price": price,
-                        "food_image": image,
-                        "food_category": categ,
-                        "food_desc": desc
+                        "emp_name": empName,
+                        "emp_age": empAge,
+                        "emp_gender": empGender,
+                        "emp_position": empPosition,
+                        "emp_address": empPosition
                     }
                 )
             });
-            alert("Food added");
+            alert("Employee added");
             window.location.reload();
         })();
 
@@ -71,10 +72,10 @@ const AdminEmployeesList = () => {
 
 
     const [empName, setEmpName] = useState('');
-    const [price, setPrice] = useState('');
-    const [image, setImage] = useState('');
-    const [categ, setCateg] = useState('');
-    const [desc, setDesc] = useState('');
+    const [empAge, setEmpAge] = useState('');
+    const [empGender, setEmpGender] = useState('');
+    const [empPosition, setEmpPosition] = useState('');
+    const [empAddress, setEmpAddress] = useState('');
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -122,8 +123,8 @@ const AdminEmployeesList = () => {
                                 <Form.Label>Employee Name</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Enter Food name"
-                                    name="food"
+                                    placeholder="Enter Employee Name"
+                                    name="employee"
                                     onChange={(e) => {
                                         setEmpName(e.target.value)
                                     }}
@@ -132,24 +133,28 @@ const AdminEmployeesList = () => {
                             <div className='row'>
                                 <div className='col-md-6'>
                                     <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
-                                        <Form.Label>Food Price</Form.Label>
+                                        <Form.Label>Employee Age</Form.Label>
                                         <Form.Control
                                             type="number"
-                                            placeholder="Enter Food name"
-                                            name="food"
+                                            placeholder="Enter Employee Age"
+                                            name="employee"
                                             onChange={(e) => {
-                                                setPrice(e.target.value)
+                                                setEmpAge(e.target.value)
                                             }}
                                         />
                                     </Form.Group>
                                 </div>
+                            </div>
+                                <div className='row'>
                                 <div className='col-md-6'>
                                     <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
-                                        <Form.Label>Food Image</Form.Label>
+                                        <Form.Label>Employee Gender</Form.Label>
                                         <Form.Control
-                                            type="file"
+                                            type="text"
+                                            placeholder="Enter Employee Gender"
+                                            name="employee"
                                             onChange={(e) => {
-                                                setImage(e.target.value)
+                                                setEmpGender(e.target.value)
                                             }}
                                         />
                                     </Form.Group>
@@ -157,32 +162,38 @@ const AdminEmployeesList = () => {
                             </div>
 
                             <div className='row'>
-                                <Form.Label>Food Type</Form.Label>
-                                <div className='col-md-12'>
-                                    <select className='form-control' name='categ'
-                                        onChange={(e) => {
-                                            setCateg(e.target.value)
-                                        }}
-                                    >
-                                        <option value='Breakfast'>Breakfast</option>
-                                        <option value='Lunch'>Lunch</option>
-                                        <option value='Dinner'>Dinner</option>
-                                    </select>
+                                <div className='col-md-6'>
+                                    <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
+                                        <Form.Label>Employee Position</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter Employee Position"
+                                            name="employee"
+                                            onChange={(e) => {
+                                                setEmpPosition(e.target.value)
+                                            }}
+                                        />
+                                    </Form.Group>
                                 </div>
                             </div>
 
-                            <div className='row my-1'>
-                                <div className='col-md-12'>
-                                    <Form.Label>Food Description</Form.Label>
-                                    <textarea className='form-control' rows={4}
-                                        onChange={(e) => {
-                                            setDesc(e.target.value)
-                                        }}>
-
-                                    </textarea>
+                            <div className='row'>
+                                <div className='col-md-6'>
+                                    <Form.Group className="mb-3 mb-3 d-flex flex-column align-items-start" controlId="formBasicEmail">
+                                        <Form.Label>Employee Address</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter Employee Address"
+                                            name="employee"
+                                            onChange={(e) => {
+                                                setEmpAddress(e.target.value)
+                                            }}
+                                        />
+                                    </Form.Group>
                                 </div>
                             </div>
 
+                            
                             <div className='row'>
                                 <div className='col-md-12 mb-3 d-flex flex-row align-items-end'>
                                     <Button variant="danger" className='mx-2' type="reset">
