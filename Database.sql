@@ -273,4 +273,19 @@ END$
 DELIMITER ;
 
 
+-- trigger
+--  delete customer  
+DELIMITER $$
+CREATE TRIGGER delete_userABCDE
+    before DELETE
+    ON customer FOR EACH ROW
+BEGIN
+	SET FOREIGN_KEY_CHECKS=OFF;
+    delete from cart where cus_id= cus_id;
+    delete from users where user_id= cus_id;
+   SET FOREIGN_KEY_CHECKS=ON;
+END$$    
+DELIMITER ; 
+
+
 
