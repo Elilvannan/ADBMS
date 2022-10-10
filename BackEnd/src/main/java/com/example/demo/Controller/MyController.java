@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,6 +43,11 @@ public class MyController {
 	@GetMapping("/getByUser/{user}")
 	public List<Users> getByUser(@PathVariable("user") String user){
 		return (List<Users>)usersServ.getDetailByUser(user);
+	}
+
+	@GetMapping("/getAllUsers")
+	public List<Object[]> getAllUsers(){
+		return usersServ.getAllUsersView();
 	}
 
 	@GetMapping("/getFoods")
@@ -115,5 +121,9 @@ public class MyController {
 		return usersServ.AddNewEmployee(employee);
 	}
 
+	@DeleteMapping("/deleteCustomer")
+	public String deleteCustomer(@PathVariable Integer id){
+		return usersServ.deleteCustomer(id);
+	}
 	
 }

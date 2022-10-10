@@ -13,4 +13,7 @@ import com.example.demo.Domain.Users;
 public interface UsersRepo extends JpaRepository<Users,Integer>{
     @Query("select u from Users u where u.name=:name")
     List<Users> getAllU(@Param("name") String name);
+
+    @Query(value="call Get_ALL_Users", nativeQuery = true)
+    List<Object[]> getUsersWithView();
 }

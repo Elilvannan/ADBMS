@@ -7,12 +7,12 @@ const ExpandedComponent = ({ data }) => <pre>{JSON.stringify(data, null, 2)}</pr
 const columns = [
   {
     name: 'USER NAME',
-    selector: row => row.name,
+    selector: row => row[1],
     sortable: true,
   },
   {
     name: 'POST',
-    selector: row => row.post,
+    selector: row => row[2],
     sortable: true,
   },
 ];
@@ -21,7 +21,7 @@ const DashBody = () => {
   
   const [userDetails, setUserDetails] = useState([]);
   useEffect(() => {
-    Axios.get('http://localhost:8080/checkLogin').then((response) => {
+    Axios.get('http://localhost:8080/getAllUsers').then((response) => {
       setUserDetails(response.data);
     });
   }, []);
@@ -36,8 +36,6 @@ const DashBody = () => {
             data={userDetails}
             selectableRows
             selectableRowsHighlight
-            expandableRows
-            expandableRowsComponent={ExpandedComponent}
             pagination
             fixedHeader
             fixedHeaderScrollHeight='70vh'

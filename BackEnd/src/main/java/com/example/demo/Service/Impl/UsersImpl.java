@@ -127,4 +127,18 @@ public class UsersImpl implements UsersServ{
 		return roomRepo.getEmptyRoomProc();
 	}
 
+<<<<<<< Updated upstream
+=======
+	@Override
+	public List<Object[]> getAllUsersView() {
+		return usersRepo.getUsersWithView();
+	}
+
+	@Override
+	public String deleteCustomer(Integer id) {
+		customerRepo.deleteById(id);
+		return "Deleted";
+	}
+
+>>>>>>> Stashed changes
 }
