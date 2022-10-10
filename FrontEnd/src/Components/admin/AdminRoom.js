@@ -51,12 +51,7 @@ const AdminRoom = () => {
 
                 />
 
-                <Icon.PlusCircle
-
-                    className="addButton d-flex content-align-end"
-                    size={35}
-                    color="green"
-                />
+               
             </div>
         </>
     )
