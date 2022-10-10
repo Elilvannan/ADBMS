@@ -124,10 +124,7 @@ INNER JOIN food_orders fo ON f.food_id = fo.food_id)
 INNER JOIN customer c ON c.cus_id = fo.cus_id);
 
 
-<<<<<<< Updated upstream
 -- procedure
-=======
->>>>>>> Stashed changes
 DELIMITER $
  CREATE PROCEDURE View_Add_To_Cart_Items(IN ID INT)
 BEGIN
@@ -150,6 +147,20 @@ BEGIN
 	select c.cus_name,c.cus_phone,c.cus_address,c.cus_email,c.cus_nic from room r,customer c where r.room_id=R_ID and c.cus_id=r.cus_id ;
 END$
 DELIMITER ;
+
+
+-- function to calculate age
+DELIMITER //
+CREATE FUNCTION getAge(ID int)
+RETURNS INT
+BEGIN
+   DECLARE ageRet INT;
+	SELECT (YEAR(curdate())-YEAR(cus_dob)) into ageRet from customer where cus_id=ID;
+    RETURN ageRet;
+END; //
+DELIMITER ; 
+
+
 
 
 
