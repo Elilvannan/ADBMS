@@ -19,6 +19,7 @@ import com.example.demo.Repositories.CustomerRepo;
 import com.example.demo.Repositories.EmployeeRepo;
 import com.example.demo.Repositories.FoodsRepo;
 import com.example.demo.Repositories.InvoiceRepo;
+import com.example.demo.Repositories.RoomRepo;
 import com.example.demo.Repositories.UsersRepo;
 import com.example.demo.Service.UsersServ;
 
@@ -43,6 +44,9 @@ public class UsersImpl implements UsersServ{
 
 	@Autowired
     private EmployeeRepo employeeRepo;
+
+	@Autowired
+	private RoomRepo roomRepo;
 	
 	@Override
 	public List<Users> getDetailByUser(String name) {
@@ -105,6 +109,12 @@ public class UsersImpl implements UsersServ{
 	@Override
 	public List<Object[]> getTestProc(Integer id) {
 		return cartRepo.getCartItems(id);
+	}
+
+	@Override
+	public List<Object[]> bookedRooms() {
+		// TODO Auto-generated method stub
+		return roomRepo.getRoomDetails();
 	}
 
 }
