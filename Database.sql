@@ -260,10 +260,11 @@ END$
 DELIMITER $
 
 DELIMITER $
- CREATE PROCEDURE getGenderMale(IN cus_gender VARCHAR(20))
+CREATE PROCEDURE View_Ordereditem_byID(IN id int)
 BEGIN
-	select *from customer where cus_gender= male;
+select f.food_name,o.ordered_date from food f,food_orders o where f.food_id=o.food_id and cus_id=id ;
 END$
 DELIMITER $
+
 
 
