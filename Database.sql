@@ -211,6 +211,13 @@ AS
 select c.cus_name, getRoomStatus(r.room_id),r.room_description from room r inner join customer c on c.cus_id = r.cus_id ;
 
 
+-- Get_order_details (output customer name, food_name)
+DELIMITER $
+CREATE PROCEDURE Get_order_details(IN ID INT)
+BEGIN
+	select fo.order_id,c.cus_name,f.food_name from customer c,food_orders fo,food f where fo.order_id =ID and c.cus_id=fo.cus_id and fo.food_id=f.food_id;
+END$
+DELIMITER $
     
 DELIMITER $
 CREATE PROCEDURE Get_Invoice_Id(IN DATE DATE)
