@@ -60,8 +60,7 @@ values
 /*rooms*/
 create table room(
     room_id varchar(255) primary key,
-    Booking_status varchar(25),
-    room_occupancy int,
+    Booking_status int,
     room_description varchar(255),
     cus_id int,
     foreign key(cus_id) references customer(cus_id)
