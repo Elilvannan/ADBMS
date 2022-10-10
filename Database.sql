@@ -187,5 +187,23 @@ DELIMITER $
 
 call View_Food_Details(16)
 
+-- get room details weather booked or not
+DELIMITER //
+CREATE FUNCTION getRoomStatus(ID int)
+RETURNS VARCHAR(50)
+BEGIN
+   DECLARE room_status VARCHAR(50);
+   DECLARE st int;
+   
+	SELECT Booking_status into st from room;
+    if st > 0 then 
+		set room_status = "Booked";
+    else
+		set room_status = "Not Booked";
+    end if;
+    RETURN room_status;
+END//
+DELIMITER ; 
+
     
 
