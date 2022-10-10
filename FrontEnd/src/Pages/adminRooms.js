@@ -1,11 +1,12 @@
 import React from 'react'
+import AdminRoomTable from '../Components/admin/AdminRoom'
 import AdminNav from '../Components/NavBar/AdminNav'
 
 const AdminRooms = () => {
   return (
     <div>
         <AdminNav/>
-      Admin rooms
+        <AdminRoomTable/>
     </div>
   )
 }
