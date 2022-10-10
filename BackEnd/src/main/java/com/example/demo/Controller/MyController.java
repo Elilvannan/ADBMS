@@ -102,7 +102,7 @@ public class MyController {
 
 	@GetMapping("/getRooms")
 	public List<Object[]> getBookedRooms(){
-		return usersServ.bookedRooms;
+		return usersServ.bookedRooms();
 
 	}
 	
