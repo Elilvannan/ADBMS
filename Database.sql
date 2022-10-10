@@ -137,7 +137,12 @@ DELIMITER
 
 
 
-
+DELIMITER $
+CREATE PROCEDURE View_Room_Details(IN R_ID INT)
+BEGIN
+	select * from room where room_id=R_ID;
+END$
+DELIMITER $
 
 
 
