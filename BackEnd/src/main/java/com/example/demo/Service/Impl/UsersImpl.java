@@ -1,5 +1,6 @@
 package com.example.demo.Service.Impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -154,8 +155,15 @@ public class UsersImpl implements UsersServ{
 	}
 
 	@Override
-	public List<Object[]> getFoodDetails(String category) {
-		return foodsRepo.getFoodDetailsBycategory(category);
+	public List<Object[]> getFoodDetailsC(String category) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Object[]> getOrdersDetailD(Date date) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

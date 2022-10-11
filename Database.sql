@@ -216,8 +216,7 @@ room r inner join customer c on c.cus_id = r.cus_id ;
 DELIMITER $
 CREATE PROCEDURE Get_order_details(IN ID INT)
 BEGIN
-	select fo.order_id,c.cus_name,f.food_name from customer c,food_orders fo,food f where fo.order_id =ID
-    and c.cus_id=fo.cus_id and fo.food_id=f.food_id;
+	select fo.order_id,c.cus_name,f.food_name,fo.ordered_date from customer c,food_orders fo,food f where fo.order_id =1 and c.cus_id=fo.cus_id and fo.food_id=f.food_id;
 END$
 DELIMITER $
     

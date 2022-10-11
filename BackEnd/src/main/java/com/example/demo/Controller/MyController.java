@@ -135,7 +135,7 @@ public class MyController {
 	}
 
 	@GetMapping("/getOrders/{id}")
-	public List<Object[]> getOrdersDEtails(@PathVariable("id") Integer id){
+	public List<Object[]> getOrdersDEtailsId(@PathVariable("id") Integer id){
 		return usersServ.getOrdersDetail(id);
 	}
 
@@ -151,13 +151,13 @@ public class MyController {
 	}
 
 	@GetMapping("/getFoodItems/{category}")
-	public List<Object[]> getOrdersDEtails(@PathVariable("category") String category){
-		return usersServ.getFoodDetails(category);
+	public List<Object[]> getOrdersDEtailsCateg(@PathVariable("category") String category){
+		return usersServ.getFoodDetailsC(category);
 	}
 
 	@GetMapping("/getOrdersItem/{date}")
-	public List<Object[]> getOrdersDetails(@PathVariable("date") Date date){
-		return usersServ.getOrdersDetail(date);
+	public List<Object[]> getOrdersDetailsDate(@PathVariable("date") Date date){
+		return usersServ.getOrdersDetailD(date);
 	}
 
 	

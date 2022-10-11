@@ -23,8 +23,8 @@ public interface CustomerRepo extends JpaRepository<Customer,Integer>{
     @Query(value="select * users where user_id= :id",nativeQuery = true)
     void deleteCustomerById(@Param("id") Integer id);
 
-    @Query(value="select fo.order_id,c.cus_name,f.food_name from customer c,food_orders fo,food f where fo.order_id =ID and c.cus_id=fo.cus_id and fo.food_id=f.food_id", nativeQuery = true)
-    List<Object[]> getOrderitems(Integer id);
+    @Query(value="call Get_order_details(:id)", nativeQuery = true)
+    List<Object[]> getOrderitems(@Param("id") Integer id);
    
 
 }
