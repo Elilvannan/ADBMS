@@ -308,4 +308,13 @@ CREATE VIEW GET_PROFIT
 AS
 select sum(amount) from GET_FOOD_ORDERS
 
-
+DELIMITER $$
+CREATE TRIGGER delete_food
+    before DELETE
+    ON food FOR EACH ROW
+BEGIN
+	SET FOREIGN_KEY_CHECKS=OFF;
+    delete from cart where food_id= old.food_id;
+   SET FOREIGN_KEY_CHECKS=ON;
+END$$    
+DELIMITER ; 
