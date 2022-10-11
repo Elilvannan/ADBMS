@@ -112,9 +112,10 @@ create table food_orders(
 DELIMITER $
  CREATE PROCEDURE View_Add_To_Cart_Items(IN ID INT)
 BEGIN
-	SELECT DISTINCT(f.food_name), f.food_id  FROM cart as c,food as f where c.cus_id = ID ;
+    SELECT f.food_name  FROM cart as c,food as f where f.food_id =c.food_id and c.cus_id = ID ;
 END$
 DELIMITER 
+
 
 CREATE VIEW FOOD_ORDERS_VIEW
 AS
