@@ -16,6 +16,7 @@ import AdminRooms from './Pages/adminRooms';
 import AdminCustomersPage from './Pages/adminCustomers';
 import AdminInvoice from './Pages/adminInvoice';
 import AdminEmployees from './Pages/adminEmployees';
+import Rooms from './Pages/rooms';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/food" element={<Food/>}/>
+          <Route path="/room" element={<Rooms/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/reg" element={<Register/>}/>
           <Route path="/AdminDash" element={<AdminDashboard/>}/>
