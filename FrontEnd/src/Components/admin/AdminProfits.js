@@ -5,17 +5,52 @@ import { Button, Form } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import * as Icon from 'react-bootstrap-icons';
 
+const columns = [
+  {
+    name: 'Order Id',
+    selector: row => row[0],
+    sortable: true,
+  },
+  {
+    name: 'Date',
+    selector: row => row[1],
+    sortable: true,
+  },
+  {
+    name: 'Name',
+    selector: row => row[2],
+    sortable: true,
+  },
+  {
+    name: 'Amount',
+    selector: row => row[3],
+    sortable: true,
+  }
+];
 
 const AdminProfitsAll = () => {
-    const [orderedFoods, setOrderedFoods] = useState([]);
-    useEffect(() => {
-        Axios.get('http://localhost:8080/allocatedRooms').then((response) => {
-            setOrderedFoods(response.data);
-        });
-    }, []);
+  const [orderedFoods, setOrderedFoods] = useState([]);
+
+  useEffect(() => {
+    Axios.get('http://localhost:8080/getFoodOrders').then((response) => {
+      setOrderedFoods(response.data);
+    });
+  }, []);
   return (
     <div>
-      
+      <DataTable
+        columns={columns}
+        data={orderedFoods}
+        selectableRows
+        selectableRowsHighlight
+        pagination
+        fixedHeader
+        fixedHeaderScrollHeight='70vh'
+        highlightOnHover
+
+      />
+
+
     </div>
   )
 }
