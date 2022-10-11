@@ -288,12 +288,19 @@ END$$
 DELIMITER ; 
 
 DELIMITER $
-CREATE PROCEDURE Get_Orders_By_Date(IN DATE DATE)
+CREATE PROCEDURE Get_Orders_By_Date(IN datee DATE)
 BEGIN
-	select f.food_category,f.food_image,f.food_name,food_price from food f,food_orders o where ordered_date=DATE and o.food_id=f.food_id;
+	select f.food_category,f.food_image,f.food_name,food_price from food f,food_orders o where ordered_date=datee and o.food_id=f.food_id;
 END$
 DELIMITER $
 
-call Get_Orders_By_Date('2022-10-09')
+
+call Get_Orders_By_Date('2022-10-09');
+
+-- get all the orderd foods
+CREATE VIEW GET_FOOD_ORDERS
+AS
+select fo.order_id,fo.ordered_date,f.food_name,fo.Amount from food_orders fo
+inner join food f on f.food_id = fo.food_id;
 
 

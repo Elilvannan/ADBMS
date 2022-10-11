@@ -18,6 +18,11 @@ public interface FoodsRepo extends JpaRepository<Foods, String>{
     @Query(value="call View_Food_Details_ByCategory", nativeQuery = true)
     List<Object[]> getFoodDetailsBycategory(String category);
     
+    @Query(value="call Get_Orders_By_Date", nativeQuery = true)
+    List<Object[]> getFoodItems_by_date(String date);
+    
+
+    
 
     @Transactional
     @Procedure(procedureName ="Delete_Food_Details")
