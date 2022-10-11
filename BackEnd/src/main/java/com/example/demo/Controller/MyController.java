@@ -2,6 +2,7 @@ package com.example.demo.Controller;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -119,11 +120,6 @@ public class MyController {
 		return usersServ.getEmptyRoomList();
 	}
 
-	@PostMapping("/bookRoom")
-	public String bookRoom(@PathVariable("id") Integer id, @PathVariable("room") Integer room){
-		return "d"+room;
-	}
-
 	@PostMapping("/addEmployee")
 	public String addEmployee(@RequestBody Employee employee){
 		return usersServ.AddNewEmployee(employee);
@@ -135,7 +131,7 @@ public class MyController {
 	}
 
 	@GetMapping("/getOrders/{id}")
-	public List<Object[]> getOrdersDEtailsId(@PathVariable("id") Integer id){
+	public List<Object[]> getOrdersDEtails(@PathVariable("id") Integer id){
 		return usersServ.getOrdersDetail(id);
 	}
 
@@ -151,14 +147,11 @@ public class MyController {
 	}
 
 	@GetMapping("/getFoodItems/{category}")
-	public List<Object[]> getOrdersDEtailsCateg(@PathVariable("category") String category){
-		return usersServ.getFoodDetailsC(category);
+	public List<Object[]> getOrdersDEtails(@PathVariable("category") String category){
+		return usersServ.getFoodDetails(category);
 	}
 
-	@GetMapping("/getOrdersItem/{date}")
-	public List<Object[]> getOrdersDetailsDate(@PathVariable("date") Date date){
-		return usersServ.getOrdersDetailD(date);
-	}
+	
 
 	
 	

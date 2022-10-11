@@ -1,6 +1,6 @@
 package com.example.demo.Service;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import com.example.demo.Domain.Cart;
@@ -53,9 +53,11 @@ public interface UsersServ{
 
     public List<Object[]> getallocatedRoomsList();
 
-	public List<Object[]> getFoodDetailsC(String category);
+	public List<Object[]> getFoodDetails(String category);
 
-    public List<Object[]> getOrdersDetailD(Date date);
+	
+
+	
 
 	
 }
