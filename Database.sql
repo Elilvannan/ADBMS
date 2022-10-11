@@ -308,8 +308,6 @@ CREATE VIEW GET_PROFIT
 AS
 select sum(amount) from GET_FOOD_ORDERS
 
-
-
 DELIMITER $$
 CREATE TRIGGER delete_food
     before DELETE
