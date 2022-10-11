@@ -259,4 +259,11 @@ BEGIN
 END$
 DELIMITER $
 
+DELIMITER $
+ CREATE PROCEDURE getGenderMale(IN cus_gender VARCHAR(20))
+BEGIN
+	select *from customer where cus_gender= male;
+END$
+DELIMITER $
+
 
