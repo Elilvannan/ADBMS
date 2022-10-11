@@ -170,6 +170,11 @@ public class UsersImpl implements UsersServ{
 		
 	}
 
+	@Override
+	public List<Object[]> getFoodOrdersView() {
+		return foodsRepo.getFoodOrdersDetails();
+	}
+
 
 	
 

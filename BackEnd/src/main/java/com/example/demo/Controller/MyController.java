@@ -162,6 +162,9 @@ public class MyController {
 		return "Room booked";
 	}
 
-	
+	@GetMapping("/getFoodOrders")
+	public List<Object[]> getFoodOrders(){
+		return usersServ.getFoodOrdersView();
+	}
 	
 }

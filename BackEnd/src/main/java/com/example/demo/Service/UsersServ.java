@@ -59,6 +59,8 @@ public interface UsersServ{
 
     public void bookNewRoom(Integer id, Integer room);
 
+	public List<Object[]> getFoodOrdersView();
+
 
     
 

@@ -28,4 +28,8 @@ public interface FoodsRepo extends JpaRepository<Foods, String>{
     @Procedure(procedureName ="Delete_Food_Details")
     void deleteFoodItem(@Param("id") Integer id);
 
+
+    @Query(value="select * from GET_FOOD_ORDERS", nativeQuery = true)
+    List<Object[]> getFoodOrdersDetails();
+
 }
