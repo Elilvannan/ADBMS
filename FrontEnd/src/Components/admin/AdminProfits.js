@@ -6,10 +6,10 @@ import Modal from 'react-bootstrap/Modal';
 import * as Icon from 'react-bootstrap-icons';
 
 
-const AdminProfits = () => {
+const AdminProfitsAll = () => {
     const [orderedFoods, setOrderedFoods] = useState([]);
     useEffect(() => {
-        Axios.get('http://localhost:8080/getFoods').then((response) => {
+        Axios.get('http://localhost:8080/allocatedRooms').then((response) => {
             setOrderedFoods(response.data);
         });
     }, []);
@@ -20,4 +20,4 @@ const AdminProfits = () => {
   )
 }
 
-export default AdminProfits
+export default AdminProfitsAll

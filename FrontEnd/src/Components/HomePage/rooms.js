@@ -23,8 +23,7 @@ const RoomsList = () => {
     } else {
       Axios.post(`http://localhost:8080/bookRoom/${theId}/${roomNumber}`, {
       }).then((response) => {
-        alert("Room booked");
-        window.location.reload();
+        console.log(response.data);
       })
 
 

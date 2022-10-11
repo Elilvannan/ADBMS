@@ -156,6 +156,11 @@ public class MyController {
 		return usersServ.getFoodItemsByDateList(datee);
 	}
 	
+	@RequestMapping("bookRoom/{theId}/{roomNo}")
+	public String bookARoom(@PathVariable("theId") Integer id,@PathVariable("roomNo") Integer room){
+		usersServ.bookNewRoom(id,room);
+		return "Room booked";
+	}
 
 	
 	

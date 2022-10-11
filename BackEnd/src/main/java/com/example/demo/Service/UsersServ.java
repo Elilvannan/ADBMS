@@ -57,6 +57,8 @@ public interface UsersServ{
 
     public List<Object[]> getFoodItemsByDateList(String datee);
 
+    public void bookNewRoom(Integer id, Integer room);
+
 
     
 

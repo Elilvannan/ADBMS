@@ -163,6 +163,12 @@ public class UsersImpl implements UsersServ{
 	public List<Object[]> getFoodItemsByDateList(String datee) {
 		return foodsRepo.getFoodItems_by_date(datee);
 	}
+
+	@Override
+	public void bookNewRoom(Integer id, Integer room) {
+		roomRepo.bookNewRoomFunc(id,room);
+		
+	}
 	
 
 
