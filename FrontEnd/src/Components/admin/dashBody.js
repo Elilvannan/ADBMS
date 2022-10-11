@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import DataTable from 'react-data-table-component';
+import './style.css'
 
 const ExpandedComponent = ({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>;
 
@@ -20,9 +21,15 @@ const columns = [
 const DashBody = () => {
   
   const [userDetails, setUserDetails] = useState([]);
+  const [profit, setProfit] = useState('');
   useEffect(() => {
     Axios.get('http://localhost:8080/getAllUsers').then((response) => {
       setUserDetails(response.data);
+    });
+  }, []);
+  useEffect(() => {
+    Axios.get('http://localhost:8080/getProfit').then((response) => {
+      setProfit(response.data);
     });
   }, []);
   return (
@@ -44,7 +51,12 @@ const DashBody = () => {
           />
         </div>
         <div className='col-md-3'>
-          Sub
+          Total Profit<br/>
+          Rs. {profit}
+
+          <br/>
+          <br/>
+          <a href='/profitAdmin' className='viewall'>VIEW ALL SALES</a>
         </div>
       </div>
     </div>

@@ -37,7 +37,7 @@ const AdminProfitsAll = () => {
     });
   }, []);
   return (
-    <div>
+    <div className='container'>
       <DataTable
         columns={columns}
         data={orderedFoods}
