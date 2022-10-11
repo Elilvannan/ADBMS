@@ -55,6 +55,11 @@ public interface UsersServ{
 
 	public List<Object[]> getFoodDetails(String category);
 
+    public List<Object[]> getFoodItemsByDateList(String datee);
+
+
+    
+
 	
 
 	

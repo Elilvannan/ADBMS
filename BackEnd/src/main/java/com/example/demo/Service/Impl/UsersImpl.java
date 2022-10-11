@@ -159,6 +159,12 @@ public class UsersImpl implements UsersServ{
 	}
 
 
+	@Override
+	public List<Object[]> getFoodItemsByDateList(String datee) {
+		return foodsRepo.getFoodItems_by_date(datee);
+	}
+	
+
 
 	
 }

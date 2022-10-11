@@ -151,6 +151,10 @@ public class MyController {
 		return usersServ.getFoodDetails(category);
 	}
 
+	@GetMapping("/getFoodItemsByDate/{date}")
+	public List<Object[]> getFoodItemsByDate(@PathVariable("date") String datee){
+		return usersServ.getFoodItemsByDateList(datee);
+	}
 	
 
 	
