@@ -195,18 +195,6 @@ insert into employee(emp_id,emp_name,emp_age,emp_gender,emp_doj,emp_position,emp
  values(103,'Malar',28,'female','Food management','Manager','Jaffna'),(104,'Kamalan',18,'male','Cleaning management','cleaner','Colombo'),
  (105,'Vimal',28,'male','Food management','Waiter','Batticaloa'),(106,'Siva',28,'female','Food management','Waiter','Jaffna'); 
 
-
-
-
-
-
-
-
-
-
-
-
-
 -- views
 --  View_Cart_Total_Price
 create view View_Cart_Total_Price as 
