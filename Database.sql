@@ -294,6 +294,12 @@ END$
 DELIMITER $
 
 
-call Get_Orders_By_Date('2022-10-09')
+call Get_Orders_By_Date('2022-10-09');
+
+-- get all the orderd foods
+CREATE VIEW GET_FOOD_ORDERS
+AS
+select fo.order_id,fo.ordered_date,f.food_name,fo.Amount from food_orders fo
+inner join food f on f.food_id = fo.food_id;
 
 
