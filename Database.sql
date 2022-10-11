@@ -219,7 +219,7 @@ BEGIN
    DECLARE room_status VARCHAR(50);
    DECLARE st int;
    
-	SELECT Booking_status into st from room;
+	SELECT Booking_status into st from room where room_id=ID;
     if st > 0 then 
 		set room_status = "Booked";
     else
@@ -234,7 +234,6 @@ create view room_details
 AS
 select c.cus_name, getRoomStatus(r.room_id),r.room_description from 
 room r inner join customer c on c.cus_id = r.cus_id ;
-
 
 -- Get_order_details (output customer name, food_name)
 DELIMITER $
@@ -341,3 +340,8 @@ BEGIN
    SET FOREIGN_KEY_CHECKS=ON;
 END$$    
 DELIMITER ; 
+
+-- get all rooms with status
+create view allRoomDetails
+AS
+select getRoomStatus(r.room_id), r.room_description from room r;
