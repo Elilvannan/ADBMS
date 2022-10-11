@@ -166,5 +166,10 @@ public class MyController {
 	public List<Object[]> getFoodOrders(){
 		return usersServ.getFoodOrdersView();
 	}
+
+	@GetMapping("/getProfit")
+	public String getProfit(){
+		return usersServ.getProfitView();
+	}
 	
 }

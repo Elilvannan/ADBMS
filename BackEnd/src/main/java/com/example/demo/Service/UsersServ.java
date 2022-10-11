@@ -61,6 +61,8 @@ public interface UsersServ{
 
 	public List<Object[]> getFoodOrdersView();
 
+	public String getProfitView();
+
 
     
 

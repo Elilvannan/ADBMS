@@ -175,6 +175,11 @@ public class UsersImpl implements UsersServ{
 		return foodsRepo.getFoodOrdersDetails();
 	}
 
+	@Override
+	public String getProfitView() {
+		return foodsRepo.getProfit() ;
+	}
+
 
 	
 

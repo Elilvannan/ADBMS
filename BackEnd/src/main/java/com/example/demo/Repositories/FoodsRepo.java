@@ -32,4 +32,7 @@ public interface FoodsRepo extends JpaRepository<Foods, String>{
     @Query(value="select * from GET_FOOD_ORDERS", nativeQuery = true)
     List<Object[]> getFoodOrdersDetails();
 
+    @Query(value="select * GET_PROFIT", nativeQuery = true)
+    String getProfit();
+
 }
