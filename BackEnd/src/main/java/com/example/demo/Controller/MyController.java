@@ -149,6 +149,11 @@ public class MyController {
 		return usersServ.getFoodDetails(category);
 	}
 
+	@GetMapping("/getOrdersItem/{date}")
+	public List<Object[]> getOrdersDetails(@PathVariable("date") Date date){
+		return usersServ.getOrdersDetail(date);
+	}
+
 	
 	
 }
