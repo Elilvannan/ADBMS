@@ -17,7 +17,7 @@ const RoomsList = () => {
     });
   }, []);
   let navigate = useNavigate();
-  const addToCart = (e, roomNumber) => {
+  const bookRooms = (e, roomNumber) => {
     if (user == null) {
       let path = `/login`;
       navigate(path);
@@ -65,7 +65,7 @@ const RoomsList = () => {
                       <div className='col-md-9'>
                       </div>
                       <div className='col'>
-                        <Button variant="success" onClick={event => addToCart(event, val[0])}><Icon.Cart3 /></Button>
+                        <Button variant="success" onClick={event => bookRooms(event, val[0])}><Icon.Cart3 /></Button>
                       </div>
                     </div>
 
