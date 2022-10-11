@@ -166,9 +166,11 @@ public class UsersImpl implements UsersServ{
 
 	@Override
 	public void bookNewRoom(Integer id, Integer room) {
-		roomRepo.bookNewRoomFunc(id,room);
+		roomRepo.bookNewRoomFunc(id, room);
 		
 	}
+
+
 	
 
 
