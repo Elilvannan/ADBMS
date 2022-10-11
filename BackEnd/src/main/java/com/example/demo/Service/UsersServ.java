@@ -63,6 +63,8 @@ public interface UsersServ{
 
 	public String getProfitView();
 
+	public List<Object[]> getallRoomslist();
+
 
     
 

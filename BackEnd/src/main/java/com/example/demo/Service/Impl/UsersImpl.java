@@ -180,6 +180,11 @@ public class UsersImpl implements UsersServ{
 		return foodsRepo.getProfit() ;
 	}
 
+	@Override
+	public List<Object[]> getallRoomslist() {
+		return roomRepo.getAllRoomList();
+	}
+
 
 	
 

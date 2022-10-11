@@ -26,4 +26,8 @@ public interface RoomRepo extends JpaRepository<Room, Integer>{
     void bookNewRoomFunc(Integer id, Integer room);
 
 
+    @Query(value="select * from allRoomDetails", nativeQuery = true)
+    List<Object[]> getAllRoomList();
+
+
 }

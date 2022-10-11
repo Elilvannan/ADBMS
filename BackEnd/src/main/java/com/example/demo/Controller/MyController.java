@@ -171,5 +171,10 @@ public class MyController {
 	public String getProfit(){
 		return usersServ.getProfitView();
 	}
+
+	@GetMapping("/getAllRooms")
+	public List<Object[]> getAllRooms(){
+		return usersServ.getallRoomslist();
+	}
 	
 }
