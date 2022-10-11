@@ -303,4 +303,9 @@ AS
 select fo.order_id,fo.ordered_date,f.food_name,fo.Amount from food_orders fo
 inner join food f on f.food_id = fo.food_id;
 
+-- get profit from a view
+CREATE VIEW GET_PROFIT
+AS
+select sum(amount) from GET_FOOD_ORDERS
+
 
