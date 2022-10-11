@@ -9,9 +9,9 @@ const RoomsList = () => {
   let user = localStorage.getItem('theUserName');
   let theId = localStorage.getItem('theId');
   const [roomsDetails, setRoomDetails] = useState([]);
-
+  console.log(roomsDetails);
   useEffect(() => {
-    Axios.get('http://localhost:8080/getRooms').then((response) => {
+    Axios.get('http://localhost:8080/emptyRooms').then((response) => {
 
       setRoomDetails(response.data);
     });
@@ -65,7 +65,7 @@ const RoomsList = () => {
                       <div className='col-md-9'>
                       </div>
                       <div className='col'>
-                        <Button variant="success" onClick={event => bookRooms(event, val[0])}><Icon.Cart3 /></Button>
+                        <Button variant="success" onClick={event => bookRooms(event, val[0])}><Icon.House /></Button>
                       </div>
                     </div>
 
