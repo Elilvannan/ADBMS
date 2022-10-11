@@ -9,7 +9,6 @@ const RoomsList = () => {
   let user = localStorage.getItem('theUserName');
   let theId = localStorage.getItem('theId');
   const [roomsDetails, setRoomDetails] = useState([]);
-  console.log(roomsDetails);
   useEffect(() => {
     Axios.get('http://localhost:8080/emptyRooms').then((response) => {
 
@@ -22,23 +21,13 @@ const RoomsList = () => {
       let path = `/login`;
       navigate(path);
     } else {
-      (async () => {
-        await fetch('http://localhost:8080/bookRoom', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(
-            {
-              "room_id": roomNumber,
-              "cus_id": theId
-            }
-          )
-        });
+      Axios.post(`http://localhost:8080/bookRoom/${theId}/${roomNumber}`, {
+      }).then((response) => {
         alert("Room booked");
         window.location.reload();
-      })();
+      })
+
+
     }
 
 

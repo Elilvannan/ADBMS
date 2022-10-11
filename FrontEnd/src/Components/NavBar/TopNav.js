@@ -122,7 +122,7 @@ const TopNav = () => {
                                     </Nav.Link>
                                     <Nav.Link href="#" className='linksFor text-center my-1 p-3'>
                                         <NavLink>
-                                            <Link to="/n" className='theLink'>ROOM</Link>
+                                            <Link to="/room" className='theLink'>ROOM</Link>
                                         </NavLink>
                                     </Nav.Link>
                                     <Nav.Link href="#" className='linksFor text-center my-1 p-3'>

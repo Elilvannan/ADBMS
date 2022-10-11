@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -116,6 +117,11 @@ public class MyController {
 	@GetMapping("/emptyRooms")
 	public List<Object[]> getEmptyRooms(){
 		return usersServ.getEmptyRoomList();
+	}
+
+	@PostMapping("/bookRoom")
+	public String bookRoom(@PathVariable("id") Integer id, @PathVariable("room") Integer room){
+		return "d"+room;
 	}
 
 	@PostMapping("/addEmployee")
