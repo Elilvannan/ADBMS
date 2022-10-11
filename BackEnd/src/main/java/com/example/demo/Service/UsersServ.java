@@ -40,5 +40,8 @@ public interface UsersServ{
 
     public String AddNewEmployee(Employee employee);
 
-
+	public List<Object[]> getEmptyRoomList();
 }
+
+
+	

@@ -10,6 +10,9 @@ import com.example.demo.Domain.Foods;
 
 public interface RoomRepo extends JpaRepository<Foods, Integer>{
 
+    @Query(value="call View_Empty_Room()", nativeQuery = true)
+    List<Object[]> getEmptyRooms();
+
     @Query(value="select * from room_details", nativeQuery = true)
     List<Object[]> getRoomDetails();
 

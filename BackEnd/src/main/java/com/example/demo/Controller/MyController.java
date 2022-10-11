@@ -106,6 +106,10 @@ public class MyController {
 
 	}
 
+	@GetMapping("/emptyRooms")
+	public List<Object[]> getEmptyRooms(){
+		return usersServ.getEmptyRoomList();
+	}
 	@PostMapping("/addEmployee")
 	public String addEmployee(@RequestBody Employee employee){
 		return usersServ.AddNewEmployee(employee);

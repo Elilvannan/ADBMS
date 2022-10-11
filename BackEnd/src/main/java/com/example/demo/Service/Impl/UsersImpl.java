@@ -122,4 +122,10 @@ public class UsersImpl implements UsersServ{
 		return "Employee added";
 	}
 
+	@Override
+	public List<Object[]> getEmptyRoomList() {
+		
+		return roomRepo.getEmptyRooms();
+	}
+
 }
