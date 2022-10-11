@@ -172,6 +172,41 @@ END; //
 DELIMITER ; 
 
 
+
+-- data to tables 
+ insert into customer values(22,'Ajay',123456,'jaffna','aj@gmail.com','98756423101V','male','1998-11-18'),(23,'Jathu',456123,'Atchuvely','jathu@gmail.com','987478586V','male','1998-11-18'),
+(24,'Prunthan',369852,'Pointpetro','ptn@gmail.com','357841236V','male','1998-09-30'),
+(25,'Vishalini',741258,'Pointpetro','rechal@gmail.com','951234576V','female','1998-12-16'),
+(26,'Farwin',357481,'Eravur','farwin@gmail.com','687342195V','female','1998-03-15'),
+(27,'Sharanya',753621,'Karainagar','shara@gmail.com','3357841256V','female','1998-05-02');
+
+
+insert into food(food_id,food_category,food_desc,food_name,food_price)  values(17,'Dinner','Chicken rice','Rice',650),(18,'Brekfast','Best Noodles','Noodles',450),(18,'Brekfast','Best Noodles','Noodles',450),
+(19,'Breakfast','Best Machroni','Machroni',650),
+(20,'Dinner','Best Koththu','Kothu',1500),
+(21,'Lunch','Best Rice with fish fry','Rice',500);
+
+
+
+insert into cart values(01,19,25,650,3),(02,20,26,1500,2),(03,21,24,500,1),(04,18,23,450,4),(05,19,22,650,3);
+
+
+insert into employee(emp_id,emp_name,emp_age,emp_gender,emp_doj,emp_position,emp_address)
+ values(103,'Malar',28,'female','Food management','Manager','Jaffna'),(104,'Kamalan',18,'male','Cleaning management','cleaner','Colombo'),
+ (105,'Vimal',28,'male','Food management','Waiter','Batticaloa'),(106,'Siva',28,'female','Food management','Waiter','Jaffna'); 
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- views
 --  View_Cart_Total_Price
 create view View_Cart_Total_Price as 
