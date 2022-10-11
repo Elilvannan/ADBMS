@@ -271,12 +271,10 @@ Booking_status =1;
 END$
 DELIMITER ;
 
-call View_Allocated_Room
-
 DELIMITER $
  CREATE PROCEDURE View_Food_Details_ByCategory(IN category VARCHAR(255))
 BEGIN
-	select food_desc,food_image,food_name,food_price from food where food_category=Category;
+	select food_name,food_desc,food_price from food where food_category=Category;
 END$
 DELIMITER ;
 
