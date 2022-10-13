@@ -70,8 +70,8 @@ public class UsersImpl implements UsersServ{
 	}
 
 	@Override
-	public List<Cart> getAllCartItems() {
-		return cartRepo.findAll();
+	public List<Object[]> getAllCartItems(Integer id) {
+		return cartRepo.getItemsInCart(id);
 	}
 
 	@Override
@@ -92,8 +92,8 @@ public class UsersImpl implements UsersServ{
 	}
 
 	@Override
-    public List<Employee> getAllEmp() {
-        return employeeRepo.findAll();
+    public List<Object[]> getAllEmp() {
+        return employeeRepo.getAllEmployees();
     }
 
 	@Override
@@ -183,6 +183,17 @@ public class UsersImpl implements UsersServ{
 	@Override
 	public List<Object[]> getallRoomslist() {
 		return roomRepo.getAllRoomList();
+	}
+
+	@Override
+	public List<Object[]> getAllCartItemsTotal(Integer id) {
+		return cartRepo.getTotalCart(id);
+	}
+
+	@Override
+	public String getProfMarg() {
+		
+		return invoiceRepo.getMyProMar();
 	}
 
 

@@ -19,4 +19,10 @@ public interface CartRepo extends JpaRepository<Cart,Integer>{
     @Query(value="CALL View_Add_To_Cart_Items(:id)", nativeQuery = true)
     List<Object[]> getCartItems(Integer id);
 
+    @Query(value="call get_cart_items_of_user(:id)", nativeQuery = true)
+    List<Object[]> getItemsInCart(@Param("id")Integer id);
+
+    @Query(value = "call get_total_cart(:id)", nativeQuery = true)
+	List<Object[]> getTotalCart(@Param("id")Integer id);
+
 }

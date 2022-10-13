@@ -22,7 +22,7 @@ const FoodsList = () => {
     }, []);
     let navigate = useNavigate();
     const addToCart = (e, quan, price) => {
-        let totalPrice = quan * price;
+        let totalPrice = quantity * price;
         console.log(totalPrice);
         if (user == null) {
             let path = `/login`;
@@ -70,6 +70,8 @@ const FoodsList = () => {
                                         <Card.Title>{val.food_name}</Card.Title>
                                         <Card.Text>
                                             {val.food_desc}
+                                            <br/>
+                                            Price : {val.food_price}
                                         </Card.Text>
                                         <div className='row'>
                                             <div className='col-md-9'>
@@ -89,16 +91,6 @@ const FoodsList = () => {
                             </div>
                         })
                     }
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="../../../public/Foods/1.jpg" />
-                        <Card.Body>
-                            <Card.Title>df</Card.Title>
-                            <Card.Text>
-                                sad
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
                 </div>
             </div>
 

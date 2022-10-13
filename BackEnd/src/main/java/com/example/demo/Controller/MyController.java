@@ -84,8 +84,13 @@ public class MyController {
 	}
 
 	@GetMapping("/getCart/{id}")
-	public List<Cart> getAllCart(){
-		return usersServ.getAllCartItems();
+	public List<Object[]> getAllCart(@PathVariable("id") Integer id){
+		return usersServ.getAllCartItems(id);
+	}
+
+	@GetMapping("/getCartTotal/{id}")
+	public List<Object[]> getAllCartTotal(@PathVariable("id") Integer id){
+		return usersServ.getAllCartItemsTotal(id);
 	}
 
 	@GetMapping("/getCustomers")
@@ -94,7 +99,7 @@ public class MyController {
 	}
 
 	@GetMapping("/getEmployees")
-    public List<Employee> getAllEmp(){
+    public List<Object[]> getAllEmpl(){
         return usersServ.getAllEmp();
     }
 
@@ -125,7 +130,7 @@ public class MyController {
 		return usersServ.AddNewEmployee(employee);
 	}
 
-	@DeleteMapping("/deleteCustomer")
+	@DeleteMapping("/deleteCustomer/{id}")
 	public String deleteCustomer(@PathVariable Integer id){
 		return usersServ.deleteCustomer(id);
 	}
@@ -175,6 +180,11 @@ public class MyController {
 	@GetMapping("/getAllRooms")
 	public List<Object[]> getAllRooms(){
 		return usersServ.getallRoomslist();
+	}
+
+	@GetMapping("/myProfitMargin")
+	public String getProMar(){
+		return usersServ.getProfMarg();
 	}
 	
 }

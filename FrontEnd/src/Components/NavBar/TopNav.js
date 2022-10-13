@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,18 +13,18 @@ import Modal from 'react-bootstrap/Modal';
 
 const columns = [
     {
-        name: 'ID',
-        selector: row => row.item_id,
+        name: 'FOOD',
+        selector: row => row[0],
         sortable: true,
     },
     {
         name: 'QUANTITY',
-        selector: row => row.quantity,
+        selector: row => row[1],
         sortable: true,
     },
     {
         name: 'PRICE',
-        selector: row => row.price,
+        selector: row => row[2],
         sortable: true,
     }
 ];
@@ -37,40 +37,51 @@ const TopNav = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
 
-    
+    const [cartTotal, setCartTotal] = useState('');
     function logOut() {
         localStorage.removeItem('theUserName');
         window.location.reload();
     }
 
-    const getCart = (id) =>{
+    const getCart = (id) => {
         console.log(id);
         setShow(true);
-        Axios.get('http://localhost:8080/getCart/{id}').then((response) => {
+        Axios.get(`http://localhost:8080/getCart/${id}`).then((response) => {
             setCartDetails(response.data);
         });
+
+        Axios.get(`http://localhost:8080/getCartTotal/${id}`).then((response) => {
+            setCartTotal(response.data);
+        });
+
     }
 
     return (
         <>
-         <Modal show={show} onHide={handleClose} centered>
+            <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>YOUR CART</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <DataTable
-                columns={columns}
-                data={cartDetails}
-                selectableRows
-                selectableRowsHighlight
-                pagination
-                fixedHeader
-                fixedHeaderScrollHeight='70vh'
-                highlightOnHover
+                    <DataTable
+                        columns={columns}
+                        data={cartDetails}
+                        selectableRows
+                        selectableRowsHighlight
+                        pagination
+                        fixedHeader
+                        fixedHeaderScrollHeight='70vh'
+                        highlightOnHover
 
-            />
+                    />
                 </Modal.Body>
-
+                <div className='row'>
+                    <div className='col-md-12 d-flex justify-content-center'>
+                        <h5>
+                            Total : Rs. {cartTotal}
+                        </h5>
+                    </div>
+                </div>
             </Modal>
 
 
@@ -81,9 +92,9 @@ const TopNav = () => {
                             <div className='row'>
                                 <div className='col-md-8'> KULATHOOR SUVAI ARUVI</div>
                                 <div className='col-md-4'>
-                                <div className='d-flex content-align-center justify-content-end' >
+                                    <div className='d-flex content-align-center justify-content-end' >
                                         <DropdownButton variant="default" title={user}>
-                                            <Dropdown.Item href="#/action-2"  onClick={event => getCart(theId)}>CART</Dropdown.Item>
+                                            <Dropdown.Item href="#/action-2" onClick={event => getCart(theId)}>CART</Dropdown.Item>
                                             <Dropdown.Item href="#/action-3" onClick={logOut}>LOGOUT</Dropdown.Item>
                                         </DropdownButton>
 
@@ -103,7 +114,7 @@ const TopNav = () => {
                             <Offcanvas.Header closeButton>
                                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                                     KSA - Batticalo
-                                    
+
                                 </Offcanvas.Title>
 
                             </Offcanvas.Header>
@@ -140,7 +151,7 @@ const TopNav = () => {
                                             <Link to="/reg" className='theLink'>REGISTER</Link>
                                         </NavLink>
                                     </Nav.Link>
-                                    
+
                                 </Nav>
 
                             </Offcanvas.Body>

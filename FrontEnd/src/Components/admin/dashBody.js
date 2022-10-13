@@ -22,6 +22,7 @@ const DashBody = () => {
   
   const [userDetails, setUserDetails] = useState([]);
   const [profit, setProfit] = useState('');
+  const [profitM, setProfitMargin] = useState('');
   useEffect(() => {
     Axios.get('http://localhost:8080/getAllUsers').then((response) => {
       setUserDetails(response.data);
@@ -30,6 +31,12 @@ const DashBody = () => {
   useEffect(() => {
     Axios.get('http://localhost:8080/getProfit').then((response) => {
       setProfit(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    Axios.get('http://localhost:8080/myProfitMargin').then((response) => {
+      setProfitMargin(response.data);
     });
   }, []);
   return (
@@ -51,10 +58,13 @@ const DashBody = () => {
           />
         </div>
         <div className='col-md-3'>
-          Total Profit<br/>
+          <h5>Total Profit</h5> 
           Rs. {profit}
 
           <br/>
+          <br/>
+          Profit Margin: {profitM}
+
           <br/>
           <a href='/profitAdmin' className='viewall'>VIEW ALL SALES</a>
         </div>

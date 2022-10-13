@@ -8,32 +8,32 @@ import * as Icon from 'react-bootstrap-icons';
 const columns = [
     {
         name: 'NO',
-        selector: row => row.emp_id,
+        selector: row => row[0],
         sortable: true,
     },
     {
         name: 'NAME',
-        selector: row => row.emp_name,
+        selector: row => row[1],
         sortable: true,
     },
     {
         name: 'AGE',
-        selector: row => row.emp_age,
+        selector: row => row[2],
         sortable: true,
     },
     {
         name: 'GENDER',
-        selector: row => row.emp_gender,
+        selector: row => row[3],
         sortable: true,
     },
     {
         name: 'POSITION',
-        selector: row => row.emp_position,
+        selector: row => row[4],
         sortable: true,
     },
     {
         name: 'ADDRESS',
-        selector: row => row.emp_address,
+        selector: row => row[5],
         sortable: true,
     }
 ];

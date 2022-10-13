@@ -174,17 +174,17 @@ DELIMITER ;
 
 
 -- data to tables 
- insert into customer values(22,'Ajay',123456,'jaffna','aj@gmail.com','98756423101V','male','1998-11-18'),(23,'Jathu',456123,'Atchuvely','jathu@gmail.com','987478586V','male','1998-11-18'),
-(24,'Prunthan',369852,'Pointpetro','ptn@gmail.com','357841236V','male','1998-09-30'),
-(25,'Vishalini',741258,'Pointpetro','rechal@gmail.com','951234576V','female','1998-12-16'),
-(26,'Farwin',357481,'Eravur','farwin@gmail.com','687342195V','female','1998-03-15'),
-(27,'Sharanya',753621,'Karainagar','shara@gmail.com','3357841256V','female','1998-05-02');
+ insert into customer values(30,'Ajay',123456,'jaffna','aj@gmail.com','98756423101V','male','1998-11-18'),(31,'Jathu',456123,'Atchuvely','jathu@gmail.com','987478586V','male','1998-11-18'),
+(32,'Prunthan',369852,'Pointpetro','ptn@gmail.com','357841236V','male','1998-09-30'),
+(33,'Vishalini',741258,'Pointpetro','rechal@gmail.com','951234576V','female','1998-12-16'),
+(34,'Farwin',357481,'Eravur','farwin@gmail.com','687342195V','female','1998-03-15'),
+(35,'Sharanya',753621,'Karainagar','shara@gmail.com','3357841256V','female','1998-05-02');
 
 
-insert into food(food_id,food_category,food_desc,food_name,food_price)  values(17,'Dinner','Chicken rice','Rice',650),(18,'Brekfast','Best Noodles','Noodles',450),(18,'Brekfast','Best Noodles','Noodles',450),
-(19,'Breakfast','Best Machroni','Machroni',650),
-(20,'Dinner','Best Koththu','Kothu',1500),
-(21,'Lunch','Best Rice with fish fry','Rice',500);
+insert into food(food_id,food_category,food_desc,food_name,food_price)  values(21,'Dinner','Chicken rice','Rice',650),(25,'Brekfast','Best Noodles','Noodles',450),(18,'Brekfast','Best Noodles','Noodles',450),
+(22,'Breakfast','Best Machroni','Machroni',650),
+(23,'Dinner','Best Koththu','Kothu',1500),
+(24,'Lunch','Best Rice with fish fry','Rice',500);
 
 
 
@@ -343,3 +343,40 @@ DELIMITER ;
 create view allRoomDetails
 AS
 select getRoomStatus(r.room_id), r.room_description from room r;
+
+
+-- procedure to get all employees
+DELIMITER $
+ CREATE PROCEDURE getAllEmployees()
+BEGIN
+    SELECT * from employee;
+END$
+DELIMITER ;
+
+-- get cart items
+CREATE VIEW GET_ALL_ITEMS_IN_CART
+AS
+select f.food_name,c.price,c.quantity,c.cus_id from cart c inner join food f where c.food_id=f.food_id
+
+-- cart items procedure
+DELIMITER $
+ CREATE PROCEDURE get_cart_items_of_user(IN ID int)
+BEGIN
+    SELECT food_name,quantity,price FROM GET_ALL_ITEMS_IN_CART where cus_id = ID;
+END$
+DELIMITER ;
+
+DELIMITER $
+ CREATE PROCEDURE get_total_cart(IN ID int)
+BEGIN
+    SELECT sum(price) FROM GET_ALL_ITEMS_IN_CART where cus_id = ID;
+END$
+DELIMITER ;
+
+-- profit margin
+CREATE VIEW PROFIT_MARGIN
+AS
+SELECT((SELECT * from GET_PROFIT)/(SELECT count(*) from customer)) as ProfitM
+
+
+

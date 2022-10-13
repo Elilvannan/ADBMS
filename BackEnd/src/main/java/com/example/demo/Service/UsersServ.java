@@ -21,7 +21,7 @@ public interface UsersServ{
 
 	public  List<Object[]> getAllCus();
 
-	public List<Cart> getAllCartItems();
+	public List<Object[]> getAllCartItems(Integer id);
 
     public String AddNewFood(Foods food);
 
@@ -29,7 +29,7 @@ public interface UsersServ{
 
 	public List<Invoice> getAllInvoice();
 
-	public List<Employee> getAllEmp();
+	public List<Object[]> getAllEmp();
 
 	public List<Customer> getAllCustomerView();
 
@@ -64,6 +64,10 @@ public interface UsersServ{
 	public String getProfitView();
 
 	public List<Object[]> getallRoomslist();
+
+	public List<Object[]> getAllCartItemsTotal(Integer id);
+
+    public String getProfMarg();
 
 
     
